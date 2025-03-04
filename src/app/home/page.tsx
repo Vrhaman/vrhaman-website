@@ -451,7 +451,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-gray-600 leading-relaxed italic">"{testimonial.comment}"</p>
+                  <p className="text-gray-600 leading-relaxed italic">&quot;{testimonial.comment}&quot;</p>
                 </div>
 
                 <div className="flex items-center justify-between pt-6 border-t border-dashed border-amber-200">
@@ -501,7 +501,7 @@ export default function HomePage() {
               <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent px-4">
                 Questions?
               </span>
-              We've Got Answers
+              We&#39;ve Got Answers
             </motion.h2>
           </div>
 
@@ -589,7 +589,7 @@ export default function HomePage() {
             <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-3xl p-8 max-w-2xl mx-auto border border-amber-200">
               <h4 className="text-xl font-semibold mb-4 text-black">Still have questions?</h4>
               <p className="text-gray-600 mb-6">
-                Can't find the answer you're looking for? Our team is here to help!
+                Can&#39;t find the answer you&#39;re looking for? Our team is here to help!
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <motion.a
@@ -887,57 +887,57 @@ export default function HomePage() {
   );
 }
 
-const stats = [
-  { value: "500+", label: "Vehicles" },
-  { value: "50k+", label: "Happy Customers" },
-  { value: "100%", label: "Safe Rides" },
-  { value: "24/7", label: "Support" },
-];
+// const stats = [
+//   { value: "500+", label: "Vehicles" },
+//   { value: "50k+", label: "Happy Customers" },
+//   { value: "100%", label: "Safe Rides" },
+//   { value: "24/7", label: "Support" },
+// ];
 
-const features = [
-  {
-    icon: "🏃",
-    title: "Lightning Fast Booking",
-    description: "Get on the road in minutes with our streamlined 5-minute booking process"
-  },
-  {
-    icon: "🛡️",
-    title: "Premium Insurance",
-    description: "Drive worry-free with our comprehensive vehicle insurance coverage"
-  },
-  {
-    icon: "✨",
-    title: "Crystal Clear Pricing",
-    description: "What you see is what you pay - transparent pricing, always"
-  }
-];
+// const features = [
+//   {
+//     icon: "🏃",
+//     title: "Lightning Fast Booking",
+//     description: "Get on the road in minutes with our streamlined 5-minute booking process"
+//   },
+//   {
+//     icon: "🛡️",
+//     title: "Premium Insurance",
+//     description: "Drive worry-free with our comprehensive vehicle insurance coverage"
+//   },
+//   {
+//     icon: "✨",
+//     title: "Crystal Clear Pricing",
+//     description: "What you see is what you pay - transparent pricing, always"
+//   }
+// ];
 
-const categories = [
-  {
-    name: "Luxury Cars",
-    description: "Premium vehicles for special occasions",
-    startingPrice: "2999",
-    image: "/images/luxury-car.jpg"
-  },
-  {
-    name: "SUVs",
-    description: "Perfect for family trips and adventures",
-    startingPrice: "1999",
-    image: "/images/suv.jpg"
-  },
-  {
-    name: "Sports Bikes",
-    description: "Experience the thrill of riding",
-    startingPrice: "1499",
-    image: "/images/sports-bike.jpg"
-  },
-  {
-    name: "Economy Cars",
-    description: "Reliable and fuel-efficient vehicles",
-    startingPrice: "999",
-    image: "/images/economy-car.jpg"
-  }
-];
+// const categories = [
+//   {
+//     name: "Luxury Cars",
+//     description: "Premium vehicles for special occasions",
+//     startingPrice: "2999",
+//     image: "/images/luxury-car.jpg"
+//   },
+//   {
+//     name: "SUVs",
+//     description: "Perfect for family trips and adventures",
+//     startingPrice: "1999",
+//     image: "/images/suv.jpg"
+//   },
+//   {
+//     name: "Sports Bikes",
+//     description: "Experience the thrill of riding",
+//     startingPrice: "1499",
+//     image: "/images/sports-bike.jpg"
+//   },
+//   {
+//     name: "Economy Cars",
+//     description: "Reliable and fuel-efficient vehicles",
+//     startingPrice: "999",
+//     image: "/images/economy-car.jpg"
+//   }
+// ];
 
 const steps = [
   { 

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/vrhaman-logo.png";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Phone,} from "lucide-react";
 
 
 export default function Navbar() {

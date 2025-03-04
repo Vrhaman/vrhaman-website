@@ -42,7 +42,7 @@ export default function AboutPage() {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 mb-12"
             >
-              We're on a mission to make vehicle rentals accessible, affordable, and hassle-free for everyone.
+              We&#39;re on a mission to make vehicle rentals accessible, affordable, and hassle-free for everyone.
             </motion.p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-gray-600 text-lg">
                 Founded in 2024, VRahman started with a simple idea: make vehicle rentals as easy as booking a cab. 
-                What began as a small fleet of cars in Mumbai has now grown into India's leading vehicle rental platform.
+                What began as a small fleet of cars in Mumbai has now grown into India&#39;s leading vehicle rental platform.
               </p>
               <p className="text-gray-600 text-lg">
                 Today, we connect thousands of vehicle owners with customers across the country, 
@@ -202,7 +202,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Join Our Journey</h2>
             <p className="text-xl text-gray-600 mb-8">
-              Be part of India's fastest-growing vehicle rental community
+              Be part of India&#39;s fastest-growing vehicle rental community
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}

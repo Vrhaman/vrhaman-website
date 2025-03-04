@@ -42,7 +42,7 @@ export default function VendorPage() {
               </h1>
 
               <p className="text-xl text-gray-600 max-w-lg">
-                Join VRahman's trusted network of vehicle providers. List your fleet, manage bookings, 
+                Join VRahman&apos;s trusted network of vehicle providers. List your fleet, manage bookings, 
                 and grow your revenue with our powerful vendor platform.
               </p>
 
