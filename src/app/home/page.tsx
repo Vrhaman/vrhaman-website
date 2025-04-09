@@ -35,13 +35,15 @@ export default function HomePage() {
                 Premium Vehicle Rentals
               </span>
 
-              <h1 className="font-heading text-6xl md:text-7xl font-bold leading-tight">
-                Drive Your
-                <span className="block text-amber-500">Dreams</span>
+              <h1 className="font-heading text-6xl md:text-6xl font-bold leading-tight text-black">
+              Rent Bikes & Cars 
+                <span className="block text-amber-500">Affordable, Convenient, & Premium!</span>
               </h1>
 
-              <p className="text-xl text-gray-600 max-w-lg">
-                Experience luxury and comfort with our premium vehicle rental service. Choose from our extensive fleet of well-maintained vehicles.
+              <p className="text-xl text-gray-500 max-w-lg">
+              Whether you need an affordable daily ride or a luxurious drive, Vrhaman has you covered! Choose
+from our well-maintained bikes and cars, delivered right to your doorstep for a hassle-free rental
+experience. Enjoy comfort, convenience, and the best prices—all in just a few taps!
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -84,7 +86,7 @@ export default function HomePage() {
               <div className="relative w-full max-w-[400px] mx-auto">
                 <Image
                   src={HeroImage}
-                  alt="VRahman App"
+                  alt="Vrhaman App"
                   width={400}
                   height={800}
                   quality={100}
@@ -144,7 +146,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6"
             >
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-              Why Choose VRahman
+              Why Choose Vrhaman
             </motion.span>
             
             <motion.h2
@@ -266,7 +268,135 @@ export default function HomePage() {
         </div>
       </section>
 
-    
+      {/* Comparison Section */}
+      <section className="py-32 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-[0.02]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6"
+            >
+              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+              Why Choose Vrhaman
+            </motion.span>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="font-heading text-4xl md:text-5xl font-bold mb-6 text-black"
+            >
+              Vrhaman vs
+              <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent px-4">
+                Competitors
+              </span>
+            </motion.h2>
+            <p className="text-gray-600 text-lg">
+              See how we compare to other rental services and why customers choose us
+            </p>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden"
+            >
+              <div className="grid grid-cols-3">
+                {/* Features Column */}
+                <div className="bg-gray-50 p-8">
+                  <div className="h-24 flex items-end mb-8">
+                    <h3 className="text-xl font-semibold text-gray-700">Features</h3>
+                  </div>
+                  
+                  {[
+                    "Pricing",
+                    "Vehicle Quality",
+                    "Booking Process",
+                    "Customer Support",
+                    "Insurance Coverage",
+                    "Cancellation Policy",
+                    "Loyalty Program"
+                  ].map((feature, index) => (
+                    <div key={index} className="py-6 border-t border-gray-200">
+                      <p className="font-medium text-gray-800">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* VRahman Column */}
+                <div className="p-8 border-l border-r border-gray-200">
+                  <div className="h-24 flex items-center justify-center mb-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">V</div>
+                      <h3 className="text-xl font-bold text-amber-600">Vrhaman</h3>
+                    </div>
+                  </div>
+                  
+                  {[
+                    { text: "Transparent pricing with no hidden fees", highlight: true },
+                    { text: "Premium, well-maintained vehicles", highlight: true },
+                    { text: "5-minute booking process", highlight: true },
+                    { text: "24/7 dedicated support team", highlight: true },
+                    { text: "Comprehensive coverage included", highlight: true },
+                    { text: "Free cancellation up to 24 hours", highlight: true },
+                    { text: "Earn points on every booking", highlight: true }
+                  ].map((item, index) => (
+                    <div key={index} className="py-6 border-t border-gray-200">
+                      <div className="flex items-center gap-2">
+                        <Check className={`w-5 h-5 ${item.highlight ? 'text-green-500' : 'text-gray-400'}`} />
+                        <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Turbo Column */}
+                <div className="p-8">
+                  <div className="h-24 flex items-center justify-center mb-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 text-2xl font-bold mx-auto mb-2">T</div>
+                      <h3 className="text-xl font-bold text-gray-600">Turbo</h3>
+                    </div>
+                  </div>
+                  
+                  {[
+                    { text: "Additional fees often added", highlight: false },
+                    { text: "Variable vehicle quality", highlight: false },
+                    { text: "15-20 minute booking process", highlight: false },
+                    { text: "Limited hours support", highlight: false },
+                    { text: "Basic coverage, extras cost more", highlight: false },
+                    { text: "Strict cancellation policy with fees", highlight: false },
+                    { text: "No rewards program", highlight: false }
+                  ].map((item, index) => (
+                    <div key={index} className="py-6 border-t border-gray-200">
+                      <div className="flex items-center gap-2">
+                        {item.highlight ? 
+                          <Check className="w-5 h-5 text-green-500" /> : 
+                          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        }
+                        <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Visual Comparison */}
+        
+        </div>
+      </section>
 
       {/* How It Works Section */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -757,14 +887,15 @@ export default function HomePage() {
               </motion.span>
 
               <h2 className="text-5xl font-bold leading-tight">
-                Get the VRahman App
+              Get the Vrhaman App
                 <span className="block mt-2 text-3xl font-normal text-white/90">
-                  Book Your Ride Anytime, Anywhere
+                 Rent Anytime, Anywhere!
                 </span>
               </h2>
 
               <p className="text-xl text-white/80 max-w-lg">
-                Download our mobile app to access exclusive deals, manage bookings, and track your rides in real-time. Available for iOS and Android devices.
+              Book your ride in minutes with our easy-to-use app! Enjoy exclusive deals, real-time tracking, and
+              hassle-free booking—available on iOS & Android. Download now and ride with ease!
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -804,10 +935,10 @@ export default function HomePage() {
               {/* Features List */}
               <div className="grid grid-cols-2 gap-6 pt-8">
                 {[
-                  { text: "Real-time tracking" },
-                  { text: "Instant notifications" },
-                  { text: "24/7 customer support" },
-                  { text: "Exclusive mobile deals" }
+                  { text: "Real-time Availability – Find your ride instantly" },
+                  { text: "Instant Booking – Just a few clicks & you're set!" },
+                  { text: "No Hidden Charges – 100% price transparency" },
+                  { text: "Exclusive Mobile Deals – Unlock special discounts" }
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-2 text-white/90">
                     <Check className="w-5 h-5" />
@@ -833,7 +964,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={AppImage}
-                    alt="VRahman App Screen 1"
+                    alt="Vrhaman App Screen 1"
                     width={280}
                     height={560}
                     className="w-full h-auto rounded-[2rem] shadow-2xl"
@@ -849,7 +980,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={AppImage2}
-                    alt="VRahman App Screen 2"
+                    alt="Vrhaman App Screen 2"
                     width={280}
                     height={560}
                     className="w-full h-auto rounded-[2rem] shadow-2xl"

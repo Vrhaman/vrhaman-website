@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/vrhaman-logo.png";
 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight, Car, Bike, Plane, Home, Headphones } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -31,11 +31,11 @@ export default function Footer() {
 
               />
               <p className="text-gray-400 max-w-md">
-                Experience luxury and comfort with our premium vehicle rental service. 
+                Experience luxury and comfort with our premium vehicle rental service.
                 Choose from our extensive fleet of well-maintained vehicles.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Stay Updated</h3>
               <p className="text-gray-400">Subscribe to our newsletter for exclusive offers and updates</p>
@@ -80,14 +80,24 @@ export default function Footer() {
             {/* Our Services */}
             <div className="space-y-4">
               <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-              {['Luxury Cars', 'City Transfer', 'Airport Transfer', '24/7 Support'].map((item, index) => (
+              {[
+                { name: 'Luxury Cars', icon: <Car className="w-4 h-4 text-amber-500" /> },
+                { name: 'Premium Bikes', icon: <Bike className="w-4 h-4 text-amber-500" /> },
+                { name: 'City Transfer', icon: <MapPin className="w-4 h-4 text-amber-500" /> },
+                { name: 'Airport Transfer', icon: <Plane className="w-4 h-4 text-amber-500" /> },
+                { name: 'Doorstep Delivery', icon: <Home className="w-4 h-4 text-amber-500" /> },
+                { name: '24/7 Support', icon: <Headphones className="w-4 h-4 text-amber-500" /> }
+              ].map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ x: 5 }}
                   className="block text-gray-400 hover:text-amber-500 transition-colors"
                 >
-                  <Link href="#" className="flex items-center gap-2 group">
-                    {item}
+                  <Link href="#" className="flex items-center gap-3 group">
+                    <div className="w-6 h-6 bg-amber-500/10 rounded-md flex items-center justify-center">
+                      {item.icon}
+                    </div>
+                    {item.name}
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </motion.div>
@@ -98,9 +108,9 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold mb-6">Contact Info</h4>
               {[
-                { icon: <Phone className="w-4 h-4" />, text: '+91 123 456 7890' },
-                { icon: <Mail className="w-4 h-4" />, text: 'info@vrahman.com' },
-                { icon: <MapPin className="w-4 h-4" />, text: 'Mumbai, India' },
+                { icon: <Phone className="w-4 h-4" />, text: '+91 8968779413' },
+                { icon: <Mail className="w-4 h-4" />, text: 'vrhaman.com@gmail.com' },
+                { icon: <MapPin className="w-4 h-4" />, text: 'Jalandhar,India' },
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-gray-400">
                   {item.icon}
@@ -141,9 +151,8 @@ export default function Footer() {
                 © 2024 VRahman. All rights reserved.
               </p>
               <div className="flex gap-6 text-sm text-gray-400">
-                <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
-                <Link href="#" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
-                <Link href="#" className="hover:text-amber-500 transition-colors">Cookie Policy</Link>
+                <Link href="/privacy-policy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
+                <Link href="/delete-page" className="hover:text-amber-500 transition-colors">Delete Account</Link>
               </div>
             </div>
           </div>
