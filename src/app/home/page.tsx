@@ -52,7 +52,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="/download"
+                    href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
                     className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition-all group"
                   >
                     Download App
@@ -795,7 +795,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                         whileTap={{ scale: 0.95 }}
                       >
                         <Link
-                          href="/signup"
+                          href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
                           className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                         >
                           <span className="relative z-10 flex items-center gap-2">
@@ -901,7 +901,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               <div className="flex flex-wrap gap-4">
                 {/* App Store Button */}
                 <motion.a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-3 bg-white text-gray-900 pl-4 pr-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300"
@@ -917,7 +917,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
 
                 {/* Google Play Button */}
                 <motion.a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-3 bg-white text-gray-900 pl-4 pr-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300"

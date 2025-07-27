@@ -33,7 +33,7 @@ export default function VendorPage() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
                 <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                VRahman for Vendors
+                Vrhaman for Vendors
               </span>
               
               <h1 className="font-heading text-6xl md:text-7xl font-bold leading-tight">
@@ -42,7 +42,7 @@ export default function VendorPage() {
               </h1>
 
               <p className="text-xl text-gray-600 max-w-lg">
-                Join VRahman&apos;s trusted network of vehicle providers. List your fleet, manage bookings, 
+                Join Vrhaman&apos;s trusted network of vehicle providers. List your fleet, manage bookings, 
                 and grow your revenue with our powerful vendor platform.
               </p>
 
@@ -52,7 +52,7 @@ export default function VendorPage() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="/vendor/register"
+                    href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman_vendor"
                     className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition-all group"
                   >
                     Download Vendor App
@@ -309,7 +309,7 @@ export default function VendorPage() {
               Start Your Journey in 3 Easy Steps
             </h2>
             <p className="font-body text-xl text-gray-600">
-              Get started with VRahman in minutes. Our streamlined registration process makes it easy to begin listing your vehicles.
+              Get started with Vrhaman in minutes. Our streamlined registration process makes it easy to begin listing your vehicles.
             </p>
           </div>
 
@@ -489,14 +489,14 @@ export default function VendorPage() {
               Ready to Grow Your Business?
             </h2>
             <p className="font-body text-xl mb-8 text-white/90">
-              Join thousands of successful vehicle providers on VRahman
+              Join thousands of successful vehicle providers on Vrhaman
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="/vendor/register"
+                href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman_vendor"
                 className="inline-flex items-center gap-2 bg-white text-amber-600 px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-all"
               >
                 Download Vendor App

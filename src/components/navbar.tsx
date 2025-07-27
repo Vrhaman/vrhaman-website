@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* Contact Button & Mobile Menu Trigger */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="tel:+1234567890"
+              href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full font-medium transition-all ${
@@ -134,7 +134,7 @@ export default function Navbar() {
                     </motion.div>
                   ))}
                   <motion.a
-                    href="tel:+1234567890"
+                    href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navItems.length * 0.1 }}
