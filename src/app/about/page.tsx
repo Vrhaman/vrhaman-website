@@ -21,7 +21,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6"
             >
-              About Vrhaman
+              About VRahman
             </motion.span>
 
             <motion.h1
@@ -78,7 +78,7 @@ export default function AboutPage() {
             >
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-gray-600 text-lg">
-                Founded in 2024, Vrhaman started with a simple idea: make vehicle rentals as easy as booking a cab. 
+                Founded in 2024, VRahman started with a simple idea: make vehicle rentals as easy as booking a cab. 
                 What began as a small fleet of cars in Mumbai has now grown into India&#39;s leading vehicle rental platform.
               </p>
               <p className="text-gray-600 text-lg">

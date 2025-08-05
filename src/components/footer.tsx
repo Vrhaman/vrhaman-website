@@ -31,11 +31,11 @@ export default function Footer() {
 
               />
               <p className="text-gray-400 max-w-md">
-                Experience luxury and comfort with our premium vehicle rental service.
+                Experience luxury and comfort with our premium vehicle rental service. 
                 Choose from our extensive fleet of well-maintained vehicles.
               </p>
             </div>
-
+            
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Stay Updated</h3>
               <p className="text-gray-400">Subscribe to our newsletter for exclusive offers and updates</p>
@@ -141,6 +141,41 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Bike Rental Locations */}
+          <div className="mt-12 pt-12 border-t border-white/10">
+            <h4 className="text-lg font-semibold mb-6">Our Locations</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {[
+                'Agra', 'Ahmedabad', 'Bangalore', 'Chandigarh', 'Chennai',
+                'Bhubaneswar', 'Shimla', 'Gokarna', 'Kochi', 'Mangalore',
+                'Bhopal', 'Agartala', 'Jodhpur', 'Udaipur', 'Vadodara',
+                'Amritsar', 'Mount Abu', 'Gwalior', 'Dehradun', 'Delhi',
+                'Ghaziabad', 'Goa', 'Gurgaon', 'Pondicherry', 'Ooty',
+                'Trivandrum', 'Wayanad', 'Puri', 'Varanasi', 'Vijayawada',
+                'Kota', 'Mathura', 'Madurai', 'Thrissur', 'Nainital',
+                'Dharamshala', 'Guwahati', 'Hyderabad', 'Jaipur', 'Kolkata',
+                'Leh', 'Indore', 'Coorg', 'Munnar', 'Lucknow',
+                'Varkala', 'Mysore', 'Tirupati', 'Surat', 'Raipur',
+                'Ranchi', 'Rameshwaram', 'Cuttack', 'Manali', 'Mumbai',
+                'Noida', 'Pune', 'Udaipur', 'Vizag', 'Faridabad',
+                'Bir Billing', 'Rishikesh', 'Coimbatore', 'Nagpur', 'Siliguri',
+                'Chikmagalur', 'Hampi', 'Srinagar', 'Alibaug', 'Mahabaleshwar',
+                'Mussoorie'
+              ].map((city, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  className="text-gray-400 hover:text-amber-500 transition-colors"
+                >
+                  <Link href={`#`} className="flex items-center gap-2 group">
+                    <Bike className="w-4 h-4" />
+                    <span>Bike on rent in {city}</span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -148,11 +183,12 @@ export default function Footer() {
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2024 VRahman. All rights reserved.
+                © 2024 Vrhaman. All rights reserved.
               </p>
               <div className="flex gap-6 text-sm text-gray-400">
-                <Link href="/privacy-policy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
-                <Link href="/delete-page" className="hover:text-amber-500 transition-colors">Delete Account</Link>
+                <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
+                <Link href="#" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
+                <Link href="#" className="hover:text-amber-500 transition-colors">Cookie Policy</Link>
               </div>
             </div>
           </div>

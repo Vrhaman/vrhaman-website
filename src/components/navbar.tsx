@@ -47,7 +47,7 @@ export default function Navbar() {
           <Link href="/" className="relative z-50">
             <Image
               src={Logo}
-              alt="VRahman"
+              alt="Vrhaman"
               width={120}
               height={40}
               className="h-10 w-auto"
@@ -134,7 +134,7 @@ export default function Navbar() {
                     </motion.div>
                   ))}
                   <motion.a
-                    href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
+                    href="tel:+1234567890"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navItems.length * 0.1 }}
