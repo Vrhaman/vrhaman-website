@@ -363,7 +363,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                   <div className="h-24 flex items-center justify-center mb-8">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 text-2xl font-bold mx-auto mb-2">T</div>
-                      <h3 className="text-xl font-bold text-gray-600">Turbo</h3>
+                      <h3 className="text-xl font-bold text-gray-600">Competitors</h3>
                     </div>
                   </div>
                   
