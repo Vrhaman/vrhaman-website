@@ -170,7 +170,7 @@ export default function Footer() {
                 >
                   <Link href={`#`} className="flex items-center gap-2 group">
                     <Bike className="w-4 h-4" />
-                    <span>Bike on rent in {city}</span>
+                    <span>Bike and Car rent in {city}</span>
                   </Link>
                 </motion.div>
               ))}
