@@ -15,8 +15,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email",
-    value: "support@vrhaman.com", 
-    link: "mailto:support@vrhaman.com"
+    value: "vrhaman.com@gmail.com", 
+    link: "mailto:vrhaman.com@gmail.com"
   },
   {
     icon: (
@@ -36,27 +36,56 @@ const contactInfo = [
       </svg>
     ),
     title: "Location", 
-    value: "Delhi, India",
-    link: "https://goo.gl/maps/QYsRGhYyG4T2Zcxt5"
+    value: "Gurgoan, India",
+    link: "#", // https://goo.gl/maps/QYsRGhYyG4T2Zcxt5
   }
 ];
 
-// Add these service options at the top of the file
-const serviceOptions = [
-  "Mobile App Development",
-  "Web Development", 
-  "UI/UX Design",
-  "Cloud Solutions",
-  "Digital Marketing",
-  "Custom Software",
+// Vendor onboarding options
+const vehicleTypes = [
+  "Bikes",
+  "Cars",
+  "Both",
 ];
 
-const budgetRanges = [
-  "Less than $5,000",
-  "$5,000 - $10,000",
-  "$10,000 - $25,000", 
-  "$25,000 - $50,000",
-  "$50,000+"
+const fleetSizes = [
+  "1-3 vehicles",
+  "4-10 vehicles",
+  "11-25 vehicles",
+  "26-50 vehicles",
+  "50+ vehicles",
+];
+
+const preferredContactTimes = [
+  "Morning (9am-12pm)",
+  "Afternoon (12pm-4pm)",
+  "Evening (4pm-8pm)",
+  "Anytime",
+];
+
+const roleOptions = [
+  "Owner",
+  "Fleet Manager",
+  "Individual Vendor",
+];
+
+const vehicleSegments = [
+  "Bike",
+  "Car",
+  "EV",
+];
+
+const serviceTypes = [
+  "Self-Drive Rentals",
+  "Chauffeur Rentals",
+  "Both",
+];
+
+const earningsRanges = [
+  "Less than 25,000",
+  "25,000 - 50,000",
+  "50,000 - 1,00,000",
+  "1,00,000+",
 ];
 
 const ContactPage = () => {
@@ -136,40 +165,49 @@ const ContactPage = () => {
           </div>
 
           <ContainerWrapper>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Content */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-lg"
+                className="max-w-lg lg:pt-2"
               >
-                <motion.span 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="inline-flex items-center px-6 py-2 rounded-full border border-purple-500/20 bg-purple-500/5 backdrop-blur-sm text-sm font-medium text-purple-400 mb-8"
-                >
-                  GET IN TOUCH
-                </motion.span>
-
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="text-4xl lg:text-6xl font-bold text-white mb-6"
                 >
-                  Let&apos;s Build Something
-                  <span className="bg-gradient-to-r from-purple-400 to-red-400 bg-clip-text text-transparent"> Amazing Together</span>
+                  Partner With Vrhaman
+                  <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Grow Your Vehicle Rental Business
+                  </span>
                 </motion.h1>
 
                 <motion.p 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-lg text-gray-400 mb-12"
+                  className="text-lg text-gray-400 mb-6"
                 >
-                  Have a project in mind? We&apos;d love to hear about it. Drop us a line and let&apos;s create something extraordinary.
+                  Turn your bikes, cars and EVs into a steady income source.
                 </motion.p>
 
+                <div className="space-y-4 text-gray-400 mb-10">
+                  <p>Own a bike, car, or EV?</p>
+                  <p>Join Vrhaman as a verified vendor and start earning with zero marketing hassle.</p>
+                  <p>We connect you with genuine customers, manage bookings, and support you at every step.</p>
+                </div>
+
+                <motion.a
+                  href="#vendor-registration"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-6 py-3 font-medium text-white shadow-lg shadow-purple-500/20"
+                >
+                  Become a Vendor
+                </motion.a>
+
                 {/* Contact Info Cards */}
-                <div className="space-y-6">
+                <div className="mt-10 space-y-6">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={index}
@@ -198,7 +236,7 @@ const ContactPage = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-2xl" />
-                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
+                <div id="vendor-registration" className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
                   <form 
                     ref={formRef}
                     onSubmit={handleSubmit} 
@@ -207,27 +245,32 @@ const ContactPage = () => {
                   >
                     <input type="hidden" name="access_key" value="7a51a0fb-2360-494a-8ad5-4a41c3455f09"></input>
                     <input type="hidden" name="from_name" value="Website Contact Form" />
-                    <input type="hidden" name="subject" value="New Contact Form Submission" />
+                    <input type="hidden" name="subject" value="New Vendor Onboarding Request" />
 
-                    {/* Name Field */}
+                    <div>
+                      <h2 className="text-xl font-semibold text-white">Vendor Registration Form</h2>
+                      <p className="text-sm text-gray-400">Basic Details</p>
+                    </div>
+
+                    {/* Contact Person */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">First Name</label>
+                        <label className="text-sm font-medium text-gray-400">Contact First Name</label>
                         <input
                           type="text"
-                          name="first_name"
+                          name="contact_first_name"
                           required
-                          placeholder="John"
+                          placeholder="First name"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Last Name</label>
+                        <label className="text-sm font-medium text-gray-400">Contact Last Name</label>
                         <input
                           type="text"
-                          name="last_name"
+                          name="contact_last_name"
                           required
-                          placeholder="Doe"
+                          placeholder="Last name"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
                       </div>
@@ -251,62 +294,194 @@ const ContactPage = () => {
                           type="tel"
                           name="phone"
                           required
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 90000 00000"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
                       </div>
                     </div>
 
-                    {/* Company and Role */}
+                    <div>
+                      <p className="text-sm text-gray-400">Business / Owner Details</p>
+                    </div>
+
+                    {/* Business and Location */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Company</label>
+                        <label className="text-sm font-medium text-gray-400">Business Name</label>
                         <input
                           type="text"
-                          name="company"
+                          name="business_name"
                           required
-                          placeholder="Your Company Name"
+                          placeholder="Your rental business name"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400">Your Role</label>
-                        <input
-                          type="text"
+                        <select
                           name="role"
                           required
-                          placeholder="e.g. CEO, Manager, Developer"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        >
+                          <option value="" className="bg-gray-900">Select role</option>
+                          {roleOptions.map((role) => (
+                            <option key={role} value={role} className="bg-gray-900">
+                              {role}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">City</label>
+                        <input
+                          type="text"
+                          name="city"
+                          required
+                          placeholder="Your city"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">Primary Operating City / Area</label>
+                        <input
+                          type="text"
+                          name="primary_operating_area"
+                          required
+                          placeholder="City or area"
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
                       </div>
                     </div>
 
-                    {/* Service and Budget */}
+                    {/* Address */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-400">Business Address</label>
+                      <textarea
+                        rows={3}
+                        name="address"
+                        required
+                        placeholder="Street, area, landmark"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                      />
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-gray-400">Vehicle Information</p>
+                    </div>
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Service Needed</label>
-                        <select 
-                          name="service" 
+                        <label className="text-sm font-medium text-gray-400">Vehicle Segment</label>
+                        <select
+                          name="vehicle_segment"
                           required
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         >
-                          <option value="" className="bg-gray-900">Select a service</option>
-                          {serviceOptions.map((service) => (
-                            <option key={service} value={service} className="bg-gray-900">
-                              {service}
+                          <option value="" className="bg-gray-900">Select segment</option>
+                          {vehicleSegments.map((segment) => (
+                            <option key={segment} value={segment} className="bg-gray-900">
+                              {segment}
                             </option>
                           ))}
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Budget Range</label>
+                        <label className="text-sm font-medium text-gray-400">Number of Vehicles</label>
+                        <input
+                          type="number"
+                          name="number_of_vehicles"
+                          min={1}
+                          required
+                          placeholder="e.g. 5"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Vehicle Type and Fleet Size */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">Vehicle Type</label>
+                        <div className="space-y-2 rounded-lg border border-white/10 bg-white/5 p-4">
+                          {vehicleTypes.map((type, index) => (
+                            <label key={type} className="flex items-center gap-3 text-sm text-gray-300">
+                              <input
+                                type="checkbox"
+                                name="vehicle_type[]"
+                                value={type}
+                                required={index === 0}
+                                className="h-4 w-4 rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500/40"
+                              />
+                              {type}
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">Fleet Size</label>
                         <select 
-                          name="budget" 
+                          name="fleet_size" 
                           required
                           className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         >
-                          <option value="" className="bg-gray-900">Select budget range</option>
-                          {budgetRanges.map((range) => (
+                          <option value="" className="bg-gray-900">Select fleet size</option>
+                          {fleetSizes.map((size) => (
+                            <option key={size} value={size} className="bg-gray-900">
+                              {size}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Preferred Contact Time */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-400">Preferred Contact Time</label>
+                      <select 
+                        name="preferred_contact_time" 
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                      >
+                        <option value="" className="bg-gray-900">Select a time</option>
+                        {preferredContactTimes.map((time) => (
+                          <option key={time} value={time} className="bg-gray-900">
+                            {time}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-gray-400">Partnership Preferences</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">Interested Service Type</label>
+                        <select
+                          name="service_type"
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        >
+                          <option value="" className="bg-gray-900">Select service type</option>
+                          {serviceTypes.map((type) => (
+                            <option key={type} value={type} className="bg-gray-900">
+                              {type}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-400">Expected Monthly Earnings Range (optional)</label>
+                        <select
+                          name="expected_monthly_earnings"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        >
+                          <option value="" className="bg-gray-900">Select range</option>
+                          {earningsRanges.map((range) => (
                             <option key={range} value={range} className="bg-gray-900">
                               {range}
                             </option>
@@ -315,30 +490,14 @@ const ContactPage = () => {
                       </div>
                     </div>
 
-                    {/* Project Timeline */}
+                    {/* Vehicle Details */}
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-400">Project Timeline</label>
-                      <select 
-                        name="timeline" 
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
-                      >
-                        <option value="" className="bg-gray-900">Select timeline</option>
-                        <option value="immediate" className="bg-gray-900">Immediate</option>
-                        <option value="1-3months" className="bg-gray-900">1-3 months</option>
-                        <option value="3-6months" className="bg-gray-900">3-6 months</option>
-                        <option value="6+months" className="bg-gray-900">6+ months</option>
-                      </select>
-                    </div>
-
-                    {/* Project Description */}
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-400">Project Details</label>
+                      <label className="text-sm font-medium text-gray-400">Vehicle Details</label>
                       <textarea
                         rows={6}
-                        name="description"
+                        name="vehicle_details"
                         required
-                        placeholder="Tell us about your project requirements, goals, and any specific features you need..."
+                        placeholder="List vehicle models, year, transmission type, and any special features."
                         className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                       />
                     </div>
@@ -355,9 +514,13 @@ const ContactPage = () => {
                         type="submit"
                         className="w-full px-8 py-6 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300"
                       >
-                        Send Message
+                        Register as a Vendor
                       </Button>
                     </motion.div>
+
+                    <p className="text-xs text-gray-400 text-center">
+                      By submitting this form, you agree to be contacted by the Vrhaman vendor onboarding team.
+                    </p>
 
                     {/* Show status messages */}
                     <div className="mt-4">

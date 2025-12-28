@@ -110,7 +110,7 @@ export default function Footer() {
               {[
                 { icon: <Phone className="w-4 h-4" />, text: '+91 8968779413' },
                 { icon: <Mail className="w-4 h-4" />, text: 'vrhaman.com@gmail.com' },
-                { icon: <MapPin className="w-4 h-4" />, text: 'Jalandhar,India' },
+                { icon: <MapPin className="w-4 h-4" />, text: 'Gurgoan,India' },
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-gray-400">
                   {item.icon}
@@ -183,7 +183,7 @@ export default function Footer() {
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                © 2024 Vrhaman. All rights reserved.
+                © 2024 Vrhaman Mobitech Pvt Ltd. All rights reserved.
               </p>
               <div className="flex gap-6 text-sm text-gray-400">
                 <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
