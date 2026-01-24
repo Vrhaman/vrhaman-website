@@ -5,9 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/vrhaman-logo.png";
 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight, Car, Bike, Plane, Home, Headphones } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight, Car, Bike, Plane, Home, Headphones, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Footer() {
+  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
+
   return (
     <footer className="relative bg-gray-900 text-white overflow-hidden">
       {/* Background Elements */}
@@ -31,11 +34,11 @@ export default function Footer() {
 
               />
               <p className="text-gray-400 max-w-md">
-                Experience luxury and comfort with our premium vehicle rental service. 
+                Experience luxury and comfort with our premium vehicle rental service.
                 Choose from our extensive fleet of well-maintained vehicles.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Stay Updated</h3>
               <p className="text-gray-400">Subscribe to our newsletter for exclusive offers and updates</p>
@@ -146,7 +149,7 @@ export default function Footer() {
           <div className="mt-12 pt-12 border-t border-white/10">
             <h4 className="text-lg font-semibold mb-6">Our Locations</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {[
+              {([
                 'Agra', 'Ahmedabad', 'Bangalore', 'Chandigarh', 'Chennai',
                 'Bhubaneswar', 'Shimla', 'Gokarna', 'Kochi', 'Mangalore',
                 'Bhopal', 'Agartala', 'Jodhpur', 'Udaipur', 'Vadodara',
@@ -162,7 +165,7 @@ export default function Footer() {
                 'Bir Billing', 'Rishikesh', 'Coimbatore', 'Nagpur', 'Siliguri',
                 'Chikmagalur', 'Hampi', 'Srinagar', 'Alibaug', 'Mahabaleshwar',
                 'Mussoorie'
-              ].map((city, index) => (
+              ]).slice(0, isLocationsOpen ? undefined : 15).map((city, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ x: 5 }}
@@ -170,10 +173,23 @@ export default function Footer() {
                 >
                   <Link href={`#`} className="flex items-center gap-2 group">
                     <Bike className="w-4 h-4" />
-                    <span>BIKE AND CAR RENTAL IN {city}</span>
+                    <span>BIKE AND CAR RENTAL IN {city.toUpperCase()}</span>
                   </Link>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={() => setIsLocationsOpen(!isLocationsOpen)}
+                className="flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-amber-500 hover:border-amber-500 transition-all bg-white/5"
+              >
+                {isLocationsOpen ? (
+                  <>Show Less <ChevronUp className="w-4 h-4" /></>
+                ) : (
+                  <>Show All Locations <ChevronDown className="w-4 h-4" /></>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -186,7 +202,7 @@ export default function Footer() {
                 © 2024 Vrhaman Mobitech Pvt Ltd. All rights reserved.
               </p>
               <div className="flex gap-6 text-sm text-gray-400">
-                <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
+                <Link href="/privacy-policy" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
                 <Link href="#" className="hover:text-amber-500 transition-colors">Cookie Policy</Link>
               </div>

@@ -47,6 +47,7 @@ export default function PrivacyPolicyPage() {
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. How We Use the Information</h2>
+                        <p className="text-gray-600 mb-4">We use your information to:</p>
                         <ul className="list-disc pl-5 text-gray-600 space-y-2">
                             <li>Create and manage your account</li>
                             <li>Match customers with available rental vehicles</li>
