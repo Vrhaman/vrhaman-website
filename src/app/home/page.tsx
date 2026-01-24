@@ -1108,18 +1108,18 @@ const testimonials = [
     name: "Rahul Sharma",
     location: "Mumbai",
     comment: "Best rental service I've ever used. The cars are always in perfect condition and the staff is super helpful.",
-    avatar: "/images/avatar1.jpg"
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg"
   },
   {
     name: "Priya Patel",
     location: "Bangalore",
     comment: "Incredibly smooth booking process and great rates. Will definitely use again!",
-    avatar: "/images/avatar2.jpg"
+    avatar: "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
     name: "Amit Kumar",
     location: "Delhi",
     comment: "The variety of vehicles and the quality of service is unmatched. Highly recommended!",
-    avatar: "/images/avatar3.jpg"
+    avatar: "https://randomuser.me/api/portraits/men/3.jpg"
   }
 ];
