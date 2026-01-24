@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/vrhaman-logo.png";
-import { Menu, X, Phone,} from "lucide-react";
+import { Menu, X, Phone, } from "lucide-react";
 
 
 export default function Navbar() {
@@ -22,12 +22,12 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { 
+    {
       title: "Vendor",
       href: "/vendor"
     },
-    { title: "About" , href: "/about" },
-    { title: "Contact" , href: "/contact" },
+    { title: "About", href: "/about" },
+    { title: "Contact", href: "/contact" },
   ];
 
 
@@ -35,11 +35,10 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-lg shadow-lg" 
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -61,9 +60,8 @@ export default function Navbar() {
               <div key={index} className="relative group">
                 <Link
                   href={item.href || "#"}
-                  className={`flex items-center gap-1 font-medium ${
-                    isScrolled ? "text-gray-800" : "text-black"
-                  } hover:text-amber-500 transition-colors`}
+                  className={`flex items-center gap-1 font-medium ${isScrolled ? "text-gray-800" : "text-black"
+                    } hover:text-amber-500 transition-colors`}
 
                 >
                   {item.title}
@@ -71,7 +69,7 @@ export default function Navbar() {
 
                 </Link>
 
-              
+
               </div>
 
             ))}
@@ -83,13 +81,12 @@ export default function Navbar() {
               href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full font-medium transition-all ${
-                isScrolled
+              className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full font-medium transition-all ${isScrolled
                   ? "bg-amber-500 text-black hover:bg-amber-600"
                   : "bg-white text-amber-500 hover:bg-gray-100"
-              }`}
+                }`}
             >
-              
+
               Download App
             </motion.a>
 

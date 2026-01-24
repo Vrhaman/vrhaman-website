@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Car, Calendar, SmileIcon, ArrowRight, Star, Shield, Clock, MapPin, FastForward, Gift, Wallet2, Check, MessageCircleQuestion, ChevronDown, MessageSquare,  } from 'lucide-react';
+import { Car, Calendar, SmileIcon, ArrowRight, Star, Shield, Clock, MapPin, FastForward, Gift, Wallet2, Check, MessageCircleQuestion, ChevronDown, MessageSquare, Globe } from 'lucide-react';
 import { useState } from 'react';
 import HeroImage from "../../../public/Customer Mockups/2.png";
 import AppImage from "../../../public/Customer Mockups/3.png";
@@ -36,14 +36,14 @@ export default function HomePage() {
               </span>
 
               <h1 className="font-heading text-6xl md:text-6xl font-bold leading-tight text-black">
-              Rent Bikes & Cars 
+                Rent Bikes & Cars
                 <span className="block text-amber-500">Affordable, Convenient, & Premium!</span>
               </h1>
 
               <p className="text-xl text-gray-500 max-w-lg">
-              Whether you need an affordable daily ride or a luxurious drive, Vrhaman has you covered! Choose
-from our well-maintained bikes and cars, delivered right to your doorstep for a hassle-free rental
-experience. Enjoy comfort, convenience, and the best prices—all in just a few taps!
+                Whether you need an affordable daily ride or a luxurious drive, Vrhaman has you covered! Choose
+                from our well-maintained bikes and cars, delivered right to your doorstep for a hassle-free rental
+                experience. Enjoy comfort, convenience, and the best prices—all in just a few taps!
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -53,10 +53,23 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                 >
                   <Link
                     href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
-                    className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition-all group"
+                    className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 shadow-lg hover:shadow-amber-500/50 transition-all group"
                   >
                     Download App
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    href="https://app.vrhaman.com/"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-medium hover:border-amber-500 hover:text-amber-600 transition-all group"
+                  >
+                    <Globe className="w-5 h-5" />
+                    Book Online
                   </Link>
                 </motion.div>
               </div>
@@ -128,8 +141,8 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
         </div>
       </section>
 
-         {/* Features Section - Modern Cards */}
-         <section className="py-32 bg-white relative overflow-hidden">
+      {/* Features Section - Modern Cards */}
+      <section className="py-32 bg-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,_#fef3c7_0%,_transparent_50%)]" />
@@ -148,7 +161,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
               Why Choose Vrhaman
             </motion.span>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +298,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
               Why Choose Vrhaman
             </motion.span>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -309,92 +322,92 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               whileInView={{ opacity: 1, y: 0 }}
               className="bg-white rounded-3xl shadow-xl overflow-hidden"
             >
-              <div className="grid grid-cols-3">
-                {/* Features Column */}
-                <div className="bg-gray-50 p-8">
-                  <div className="h-24 flex items-end mb-8">
-                    <h3 className="text-xl font-semibold text-gray-700">Features</h3>
-                  </div>
-                  
-                  {[
-                    "Pricing",
-                    "Vehicle Quality",
-                    "Booking Process",
-                    "Customer Support",
-                    "Insurance Coverage",
-                    "Cancellation Policy",
-                    "Loyalty Program"
-                  ].map((feature, index) => (
-                    <div key={index} className="py-6 border-t border-gray-200">
-                      <p className="font-medium text-gray-800">{feature}</p>
+              <div className="overflow-x-auto">
+                <div className="grid grid-cols-3 min-w-[800px]">
+                  {/* Features Column */}
+                  <div className="bg-gray-50 p-8">
+                    <div className="h-24 flex items-end mb-8">
+                      <h3 className="text-xl font-semibold text-gray-700">Features</h3>
                     </div>
-                  ))}
-                </div>
-                
-                {/* VRahman Column */}
-                <div className="p-8 border-l border-r border-gray-200">
-                  <div className="h-24 flex items-center justify-center mb-8">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">V</div>
-                      <h3 className="text-xl font-bold text-amber-600">Vrhaman</h3>
-                    </div>
+
+                    {[
+                      "Pricing",
+                      "Vehicle Quality",
+                      "Booking Process",
+                      "Customer Support",
+                      "Insurance Coverage",
+                      "Cancellation Policy",
+                      "Loyalty Program"
+                    ].map((feature, index) => (
+                      <div key={index} className="py-6 border-t border-gray-200">
+                        <p className="font-medium text-gray-800">{feature}</p>
+                      </div>
+                    ))}
                   </div>
-                  
-                  {[
-                    { text: "Transparent pricing with no hidden fees", highlight: true },
-                    { text: "Premium, well-maintained vehicles", highlight: true },
-                    { text: "5-minute booking process", highlight: true },
-                    { text: "24/7 dedicated support team", highlight: true },
-                    { text: "Comprehensive coverage included", highlight: true },
-                    { text: "Free cancellation up to 24 hours", highlight: true },
-                    { text: "Earn points on every booking", highlight: true }
-                  ].map((item, index) => (
-                    <div key={index} className="py-6 border-t border-gray-200">
-                      <div className="flex items-center gap-2">
-                        <Check className={`w-5 h-5 ${item.highlight ? 'text-green-500' : 'text-gray-400'}`} />
-                        <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+
+                  {/* VRahman Column */}
+                  <div className="p-8 border-l border-r border-gray-200">
+                    <div className="h-24 flex items-center justify-center mb-8">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">V</div>
+                        <h3 className="text-xl font-bold text-amber-600">Vrhaman</h3>
                       </div>
                     </div>
-                  ))}
-                </div>
-                
-                {/* Turbo Column */}
-                <div className="p-8">
-                  <div className="h-24 flex items-center justify-center mb-8">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 text-2xl font-bold mx-auto mb-2">O</div>
-                      <h3 className="text-xl font-bold text-gray-600">Offline Vendors</h3>
-                    </div>
+
+                    {[
+                      { text: "Transparent pricing with no hidden fees", highlight: true },
+                      { text: "Premium, well-maintained vehicles", highlight: true },
+                      { text: "5-minute booking process", highlight: true },
+                      { text: "24/7 dedicated support team", highlight: true },
+                      { text: "Comprehensive coverage included", highlight: true },
+                      { text: "Free cancellation up to 24 hours", highlight: true },
+                      { text: "Earn points on every booking", highlight: true }
+                    ].map((item, index) => (
+                      <div key={index} className="py-6 border-t border-gray-200">
+                        <div className="flex items-center gap-2">
+                          <Check className={`w-5 h-5 ${item.highlight ? 'text-green-500' : 'text-gray-400'}`} />
+                          <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  {[
-                    { text: "Additional fees often added", highlight: false },
-                    { text: "Variable vehicle quality", highlight: false },
-                    { text: "15-20 minute booking process", highlight: false },
-                    { text: "Limited hours support", highlight: false },
-                    { text: "Basic coverage, extras cost more", highlight: false },
-                    { text: "Strict cancellation policy with fees", highlight: false },
-                    { text: "No rewards program", highlight: false }
-                  ].map((item, index) => (
-                    <div key={index} className="py-6 border-t border-gray-200">
-                      <div className="flex items-center gap-2">
-                        {item.highlight ? 
-                          <Check className="w-5 h-5 text-green-500" /> : 
-                          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        }
-                        <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+
+                  {/* Turbo Column */}
+                  <div className="p-8">
+                    <div className="h-24 flex items-center justify-center mb-8">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 text-2xl font-bold mx-auto mb-2">O</div>
+                        <h3 className="text-xl font-bold text-gray-600">Offline Vendors</h3>
                       </div>
                     </div>
-                  ))}
+
+                    {[
+                      { text: "Additional fees often added", highlight: false },
+                      { text: "Variable vehicle quality", highlight: false },
+                      { text: "15-20 minute booking process", highlight: false },
+                      { text: "Limited hours support", highlight: false },
+                      { text: "Basic coverage, extras cost more", highlight: false },
+                      { text: "Strict cancellation policy with fees", highlight: false },
+                      { text: "No rewards program", highlight: false }
+                    ].map((item, index) => (
+                      <div key={index} className="py-6 border-t border-gray-200">
+                        <div className="flex items-center gap-2">
+                          {item.highlight ?
+                            <Check className="w-5 h-5 text-green-500" /> :
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          }
+                          <p className={`${item.highlight ? 'text-gray-800 font-medium' : 'text-gray-600'}`}>{item.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Visual Comparison */}
-        
         </div>
       </section>
 
@@ -408,7 +421,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
             transition={{ duration: 0.8 }}
             className="text-center mb-20 relative"
           >
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -480,11 +493,11 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                   {index < steps.length - 1 && (
                     <div className="hidden lg:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-20">
                       <motion.div
-                        animate={{ 
+                        animate={{
                           x: [0, 10, 0],
                           scale: [1, 1.1, 1]
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 2,
                           repeat: Infinity,
                           ease: "easeInOut"
@@ -521,7 +534,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -620,7 +633,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
               Frequently Asked Questions
             </motion.span>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -637,7 +650,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
 
           {/* FAQ Categories */}
           <div className="max-w-4xl mx-auto mb-16">
-           
+
           </div>
 
           {/* FAQ Accordion */}
@@ -685,16 +698,15 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                         </h3>
                       </div>
                       <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center group-hover:bg-amber-100 transition-colors">
-                        <ChevronDown 
-                          className={`w-5 h-5 text-amber-600 transition-transform duration-300 ${
-                            openFaqIndex === index ? 'rotate-180' : ''
-                          }`} 
+                        <ChevronDown
+                          className={`w-5 h-5 text-amber-600 transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180' : ''
+                            }`}
                         />
                       </div>
                     </div>
                     <motion.div
                       initial={false}
-                      animate={{ 
+                      animate={{
                         height: openFaqIndex === index ? 'auto' : 0,
                         opacity: openFaqIndex === index ? 1 : 0,
                         marginTop: openFaqIndex === index ? 16 : 0
@@ -731,12 +743,12 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                   <MessageSquare className="w-4 h-4" />
                   Contact Support
                 </motion.a>
-               
+
               </div>
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
       <section className="relative py-32 overflow-hidden">
@@ -774,7 +786,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                         Save 20% Today
                       </span>
                     </div>
-                    
+
                     <h2 className="text-5xl font-bold leading-tight">
                       <span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-500 bg-clip-text text-transparent">
                         Start Your Journey
@@ -785,7 +797,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                     </h2>
 
                     <p className="text-xl text-gray-600">
-                      Join thousands of satisfied customers experiencing luxury and comfort. 
+                      Join thousands of satisfied customers experiencing luxury and comfort.
                       Special welcome bonus for new members!
                     </p>
 
@@ -806,7 +818,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                           <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </Link>
                       </motion.div>
-                      
+
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -861,11 +873,11 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          
+
           {/* Animated dots pattern */}
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 2px, transparent 0)', 
-            backgroundSize: '30px 30px' 
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 2px, transparent 0)',
+            backgroundSize: '30px 30px'
           }}></div>
         </div>
 
@@ -887,15 +899,15 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
               </motion.span>
 
               <h2 className="text-5xl font-bold leading-tight">
-              Get the Vrhaman App
+                Get the Vrhaman App
                 <span className="block mt-2 text-3xl font-normal text-white/90">
-                 Rent Anytime, Anywhere!
+                  Rent Anytime, Anywhere!
                 </span>
               </h2>
 
               <p className="text-xl text-white/80 max-w-lg">
-              Book your ride in minutes with our easy-to-use app! Enjoy exclusive deals, real-time tracking, and
-              hassle-free booking—available on iOS & Android. Download now and ride with ease!
+                Book your ride in minutes with our easy-to-use app! Enjoy exclusive deals, real-time tracking, and
+                hassle-free booking—available on iOS & Android. Download now and ride with ease!
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -907,7 +919,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
                   className="flex items-center gap-3 bg-white text-gray-900 pl-4 pr-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300"
                 >
                   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                   </svg>
                   <div className="leading-none">
                     <div className="text-xs">Download on the</div>
@@ -1071,7 +1083,7 @@ experience. Enjoy comfort, convenience, and the best prices—all in just a few 
 // ];
 
 const steps = [
-  { 
+  {
     icon: <Car className="text-amber-500 h-10 w-10" />,
     title: "Choose Your Vehicle",
     description: "Browse through our extensive collection of well-maintained vehicles. Filter by type, price, or features to find your perfect match.",
@@ -1110,5 +1122,4 @@ const testimonials = [
     comment: "The variety of vehicles and the quality of service is unmatched. Highly recommended!",
     avatar: "/images/avatar3.jpg"
   }
-]; 
- 
+];
