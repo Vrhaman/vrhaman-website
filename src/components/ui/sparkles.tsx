@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect, useState } from "react";
 
 interface SparklesCoreProps {
   background?: string;
@@ -17,6 +18,14 @@ export function SparklesCore({
   className = "",
   particleColor = "#FFFFFF",
 }: SparklesCoreProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div className={`absolute inset-0 ${className}`} style={{ background }}>
       {[...Array(particleDensity)].map((_, i) => (
@@ -37,4 +46,4 @@ export function SparklesCore({
       ))}
     </div>
   );
-} 
+}

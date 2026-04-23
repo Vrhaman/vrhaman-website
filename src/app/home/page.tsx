@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Car, Calendar, SmileIcon, ArrowRight, Star, Shield, Clock, MapPin, FastForward, Gift, Wallet2, Check, MessageCircleQuestion, ChevronDown, MessageSquare, Globe } from 'lucide-react';
+import { Car, Bike, Calendar, SmileIcon, ArrowRight, Star, Shield, Clock, MapPin, FastForward, Gift, Wallet2, Check, MessageCircleQuestion, ChevronDown, MessageSquare, Globe, User } from 'lucide-react';
 import { useState } from 'react';
 import HeroImage from "../../../public/Customer Mockups/2.png";
 import AppImage from "../../../public/Customer Mockups/3.png";
@@ -16,125 +16,109 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-amber-50/50" />
           <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5" />
         </div>
 
         <div className="container mx-auto px-4 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="space-y-8"
+              className="space-y-10"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100/80 backdrop-blur-sm text-amber-700 rounded-full text-sm font-bold border border-amber-200">
                 <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                Premium Vehicle Rentals
-              </span>
+                Trusted by 50,000+ Users & 1,000+ Vendors
+              </div>
 
-              <h1 className="font-heading text-6xl md:text-6xl font-bold leading-tight text-black">
-                Rent Bikes & Cars
-                <span className="block text-amber-500">Affordable, Convenient, & Premium!</span>
+              <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-gray-900">
+                Premium Self-Drive <br />
+                <span className="text-amber-500">Bike & Car Rentals</span>
               </h1>
 
-              <p className="text-xl text-gray-500 max-w-lg">
-                Whether you need an affordable daily ride or a luxurious drive, Vrhaman has you covered! Choose
-                from our well-maintained bikes and cars, delivered right to your doorstep for a hassle-free rental
-                experience. Enjoy comfort, convenience, and the best prices—all in just a few taps!
+              <p className="text-xl md:text-2xl text-gray-600 max-w-xl leading-relaxed">
+                Find your perfect ride in minutes. Browse bikes and cars near you, book instantly, and ride with confidence.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
-                    className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 shadow-lg hover:shadow-amber-500/50 transition-all group"
-                  >
-                    Download App
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </motion.div>
-
+              <div className="flex flex-col sm:flex-row gap-5">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
                     href="https://app.vrhaman.com/"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-medium hover:border-amber-500 hover:text-amber-600 transition-all group"
+                    className="inline-flex items-center justify-center gap-3 bg-amber-500 text-white px-10 py-5 rounded-2xl font-bold hover:bg-amber-600 shadow-2xl shadow-amber-500/30 transition-all group w-full"
                   >
-                    <Globe className="w-5 h-5" />
-                    Book Online
+                    <Bike className="w-6 h-6" />
+                    Book Now
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    href="https://vendor.vrhaman.com/"
+                    className="inline-flex items-center justify-center gap-3 bg-white text-gray-900 border-2 border-gray-100 px-10 py-5 rounded-2xl font-bold hover:border-amber-500 hover:text-amber-600 shadow-xl transition-all group w-full"
+                  >
+                    <Car className="w-6 h-6" />
+                    Vendor Login
                   </Link>
                 </motion.div>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-4 gap-6 pt-8">
-                {[
-                  { value: "500+", label: "Vehicles" },
-                  { value: "50k+", label: "Happy Customers" },
-                  { value: "100%", label: "Safe Rides" },
-                  { value: "24/7", label: "Support" },
-                ].map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-amber-500">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
+              <div className="flex items-center gap-8 pt-4">
+                <Link href="#request-demo" className="text-gray-500 hover:text-amber-600 font-semibold flex items-center gap-2 transition-colors">
+                  Request a Demo <ArrowRight className="w-4 h-4" />
+                </Link>
+                <div className="h-4 w-[1px] bg-gray-300" />
+                <div className="flex -space-x-4 items-center">
+                  {[
+                    { bg: "bg-amber-100", text: "text-amber-600" },
+                    { bg: "bg-blue-100", text: "text-blue-600" },
+                    { bg: "bg-green-100", text: "text-green-600" },
+                    { bg: "bg-purple-100", text: "text-purple-600" }
+                  ].map((style, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ y: -4, scale: 1.1 }}
+                      className={`w-12 h-12 rounded-full border-4 border-white ${style.bg} flex items-center justify-center shadow-sm relative z-[10] cursor-pointer`}
+                    >
+                      <User className={`w-6 h-6 ${style.text}`} />
+                    </motion.div>
+                  ))}
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 rounded-full border-4 border-white bg-gray-900 text-white flex items-center justify-center text-sm font-bold shadow-sm relative z-[5] cursor-pointer"
+                  >
+                    +1k
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
 
             {/* Right Content - App Preview */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
               className="relative hidden lg:block"
             >
-              <div className="relative w-full max-w-[400px] mx-auto">
+              <div className="relative z-10 w-full max-w-[450px] mx-auto group">
+                <div className="absolute -inset-4 bg-amber-500/10 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <Image
                   src={HeroImage}
-                  alt="Vrhaman App"
-                  width={400}
-                  height={800}
-                  quality={100}
+                  alt="Vrhaman App - Self-Drive Bike and Car Rental Platform for Customers and Vendors"
+                  width={450}
+                  height={900}
+                  className="relative z-10 w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-700"
                   priority
-                  className="w-full h-auto"
                 />
-
-                {/* Floating Cards */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -left-12 top-1/4 bg-white p-4 rounded-xl shadow-lg"
-                >
-                  <div className="flex items-center gap-3">
-                    <Shield className="text-amber-500" />
-                    <div>
-                      <div className="font-medium">Fully Insured</div>
-                      <div className="text-sm text-gray-600">Safe & Secure</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -right-12 bottom-1/4 bg-white p-4 rounded-xl shadow-lg"
-                >
-                  <div className="flex items-center gap-3">
-                    <Clock className="text-amber-500" />
-                    <div>
-                      <div className="font-medium">24/7 Support</div>
-                      <div className="text-sm text-gray-600">Always Available</div>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -240,46 +224,233 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Bottom Feature Cards */}
+
+          </div>
+        </div>
+      </section>
+
+      {/* Vehicle Categories Section */}
+      <section className="py-24 bg-gray-50 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Our Fleet</h2>
+            <p className="text-gray-600 text-lg">Wide variety of vehicles to suit every need and budget</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <Car className="w-6 h-6" />,
-                title: "Wide Selection",
-                description: "Choose from our extensive fleet of vehicles"
+                name: "Luxury Cars",
+                description: "Premium vehicles for special occasions",
+                startingPrice: "2999",
+                icon: <Car className="w-12 h-12 text-amber-500" />,
+                keywords: "Luxury car rental near me"
               },
               {
-                icon: <MapPin className="w-6 h-6" />,
-                title: "Convenient Locations",
-                description: "Multiple pickup and drop-off points"
+                name: "Sports Bikes",
+                description: "Experience the thrill of riding",
+                startingPrice: "1499",
+                icon: <Bike className="w-12 h-12 text-amber-500" />,
+                keywords: "Self-drive bike rental"
               },
               {
-                icon: <Star className="w-6 h-6" />,
-                title: "Premium Service",
-                description: "Exceptional customer service 24/7"
+                name: "SUVs",
+                description: "Perfect for family trips and adventures",
+                startingPrice: "1999",
+                icon: <Car className="w-12 h-12 text-amber-500" />,
+                keywords: "SUV car rental"
+              },
+              {
+                name: "Daily Commute",
+                description: "Reliable and fuel-efficient vehicles",
+                startingPrice: "499",
+                icon: <Bike className="w-12 h-12 text-amber-500" />,
+                keywords: "Scooty rental near me"
               }
-            ].map((feature, index) => (
+            ].map((cat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                className="lg:col-span-4 group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500"
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {feature.icon}
+                <div className="mb-6">{cat.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{cat.name}</h3>
+                <p className="text-gray-600 mb-6">{cat.description}</p>
+                <div className="flex items-center justify-between mt-auto">
+                  <div>
+                    <span className="text-sm text-gray-500">Starting from</span>
+                    <div className="text-2xl font-bold text-amber-500">₹{cat.startingPrice}/day</div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-amber-600 transition-colors text-black">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <Link
+                    href="https://app.vrhaman.com/"
+                    className="p-3 bg-amber-100 rounded-full text-amber-600 hover:bg-amber-500 hover:text-white transition-colors"
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
                 </div>
+                <span className="sr-only">{cat.keywords}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Vendor Section - Grow Your Business */}
+      <section className="py-32 bg-gray-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-500/10 skew-x-12 transform translate-x-24" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="relative w-full max-w-[500px] mx-auto">
+                <div className="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full animate-pulse" />
+                <Image
+                  src={AppImage2}
+                  alt="Vrhaman Vendor Dashboard - Manage Fleet and Grow Revenue"
+                  width={500}
+                  height={1000}
+                  className="relative z-10 w-full h-auto rounded-[3rem] shadow-2xl border-4 border-gray-800"
+                />
+              </div>
+            </div>
+
+            <div className="lg:w-1/2 space-y-8 order-1 lg:order-2 text-center lg:text-left">
+              <span className="px-5 py-2 bg-amber-500/20 text-amber-400 rounded-full text-sm font-bold border border-amber-500/30">
+                For Fleet Owners
+              </span>
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                Turn Your Fleet Into <br />
+                <span className="text-amber-500">A Revenue Stream</span>
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Onboard your vehicles, manage real-time bookings, and track revenue through our advanced <strong>Vendor Dashboard</strong>. Built for scale, designed for simplicity.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-6 pt-6">
+                {[
+                  { title: "Real-time Visibility", desc: "List vehicles and get instant rental requests." },
+                  { title: "Advanced Tracking", desc: "Monitor your fleet's location and health." },
+                  { title: "Automated Payments", desc: "Receive earnings directly to your bank account." },
+                  { title: "Smart Scheduling", desc: "Optimize vehicle usage with our smart calendar." }
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-amber-500/50 transition-colors">
+                    <div className="shrink-0 w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 font-bold">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white">{item.title}</h4>
+                      <p className="text-sm text-gray-500">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4 pt-8 justify-center lg:justify-start">
+                <Link
+                  href="https://vendor.vrhaman.com/"
+                  className="px-10 py-5 bg-white text-gray-900 rounded-2xl font-bold hover:bg-gray-100 transition-all shadow-xl"
+                >
+                  Get Started for Free
+                </Link>
+                <Link
+                  href="#request-demo-vendor"
+                  className="px-10 py-5 bg-transparent border-2 border-white/20 text-white rounded-2xl font-bold hover:bg-white/10 transition-all"
+                >
+                  Watch Demo
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Stats Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { value: "500+", label: "Verified Vehicles", sub: "Cars & Bikes" },
+              { value: "50k+", label: "Happy Journeys", sub: "Across India" },
+              { value: "100%", label: "Secure Payments", sub: "End-to-end encrypted" },
+              { value: "1k+", label: "Partner Vendors", sub: "Growing ecosystem" }
+            ].map((stat, index) => (
+              <div key={index} className="p-8 rounded-[2rem] bg-gray-50 text-center hover:scale-105 transition-transform duration-300">
+                <div className="text-5xl font-black text-amber-500 mb-2">{stat.value}</div>
+                <div className="text-lg font-bold text-gray-900">{stat.label}</div>
+                <div className="text-sm text-gray-500">{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Request Demo Section */}
+      <section id="request-demo" className="py-32 bg-amber-500 overflow-hidden relative">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto bg-white rounded-[3rem] p-12 lg:p-20 shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                  Ready to experience <br />
+                  <span className="text-amber-500">Vrhaman in Action?</span>
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Schedule a personalized 15-minute demo to see how our platform can optimize your rental experience or business.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-gray-700">
+                    <Check className="text-green-500" />
+                    <span>Custom solutions for your needs</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-gray-700">
+                    <Check className="text-green-500" />
+                    <span>Direct Q&A with our experts</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-gray-700">
+                    <Check className="text-green-500" />
+                    <span>Early access to premium features</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <Link
+                    id="request-demo-customer"
+                    href="https://app.vrhaman.com/"
+                    className="p-8 rounded-3xl border-2 border-amber-100 hover:border-amber-500 hover:bg-amber-50 transition-all text-center group"
+                  >
+                    <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <Bike />
+                    </div>
+                    <div className="font-bold text-gray-900">Customer Demo</div>
+                    <div className="text-xs text-gray-500 mt-2">I want to rent</div>
+                  </Link>
+                  <Link
+                    id="request-demo-vendor"
+                    href="https://vendor.vrhaman.com/"
+                    className="p-8 rounded-3xl border-2 border-amber-100 hover:border-amber-500 hover:bg-amber-50 transition-all text-center group"
+                  >
+                    <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <Car />
+                    </div>
+                    <div className="font-bold text-gray-900">Vendor Demo</div>
+                    <div className="text-xs text-gray-500 mt-2">I want to list</div>
+                  </Link>
+                </div>
+                <button className="w-full py-5 bg-amber-500 text-white rounded-2xl font-bold text-xl hover:bg-amber-600 transition-all shadow-xl">
+                  Get Started Now
+                </button>
+                <p className="text-center text-sm text-gray-400">
+                  No credit card required. Cancel anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Comparison Section */}
       <section className="py-32 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
@@ -546,7 +717,7 @@ export default function HomePage() {
               What Our{' '}
               <span className="relative inline-block">
                 Customers
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-yellow-400"></div>
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-yellow-400"></span>
               </span>
               {' '}Say
             </h2>
@@ -572,14 +743,8 @@ export default function HomePage() {
 
                 <div className="flex items-center mb-8">
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-amber-50">
-                      <Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        width={64}
-                        height={64}
-                        className="object-cover w-full h-full"
-                      />
+                    <div className={`w-16 h-16 rounded-full border-4 border-white flex items-center justify-center shadow-sm ${testimonial.bg}`}>
+                      <User className={`w-8 h-8 ${testimonial.text}`} />
                     </div>
                     <div className="absolute -bottom-2 -right-2 bg-green-400 w-5 h-5 rounded-full border-2 border-white flex items-center justify-center">
                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -646,6 +811,50 @@ export default function HomePage() {
               </span>
               We&#39;ve Got Answers
             </motion.h2>
+
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What documents do I need to rent a vehicle?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "You'll need a valid driver's license, proof of identity (Aadhar/PAN), and a credit card for security deposit. For certain vehicles, additional documentation may be required."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Is insurance included in the rental price?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, basic insurance is included in all our rentals. We also offer premium insurance options for additional coverage and peace of mind."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can I modify or cancel my booking?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, you can modify or cancel your booking up to 24 hours before the pickup time. Changes may affect pricing, and cancellation fees may apply."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What is your fuel policy?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We provide vehicles with a full tank of fuel, and we expect them to be returned with a full tank. This ensures transparency and fairness in fuel charges."
+                      }
+                    }
+                  ]
+                })
+              }}
+            />
           </div>
 
           {/* FAQ Categories */}
@@ -654,23 +863,27 @@ export default function HomePage() {
           </div>
 
           {/* FAQ Accordion */}
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-6">
             {[
               {
-                question: "What documents do I need to rent a vehicle?",
-                answer: "You'll need a valid driver's license, proof of identity (Aadhar/PAN), and a credit card for security deposit. For certain vehicles, additional documentation may be required."
+                question: "How do I rent a self-drive bike or car on Vrhaman?",
+                answer: "Simply download the Vrhaman app, choose your location and vehicle, upload your driver's license for quick verification, and you're ready to ride! We offer home delivery for a completely hassle-free experience."
               },
               {
-                question: "Is insurance included in the rental price?",
-                answer: "Yes, basic insurance is included in all our rentals. We also offer premium insurance options for additional coverage and peace of mind."
+                question: "What are the requirements for becoming a Vrhaman vendor?",
+                answer: "To list your fleet, you need valid vehicle registrations (RC), comprehensive insurance, and a valid business identity. Our vendor dashboard makes it easy to manage bookings and track your earnings."
               },
               {
-                question: "Can I modify or cancel my booking?",
-                answer: "Yes, you can modify or cancel your booking up to 24 hours before the pickup time. Changes may affect pricing, and cancellation fees may apply."
+                question: "Is there a security deposit for vehicle rentals?",
+                answer: "Yes, a minimal security deposit is required for most vehicles. This is fully refundable within 24-48 hours after you return the vehicle in good condition."
               },
               {
-                question: "What is your fuel policy?",
-                answer: "We provide vehicles with a full tank of fuel, and we expect them to be returned with a full tank. This ensures transparency and fairness in fuel charges."
+                question: "What happens if a vehicle breaks down during my trip?",
+                answer: "We provide 24/7 roadside assistance. In case of a breakdown, simply call our support number, and we will arrange for a repair or a replacement vehicle immediately."
+              },
+              {
+                question: "Can I list my own personal car on Vrhaman as a vendor?",
+                answer: "Currently, we only accept commercial vehicles list with appropriate permits. Please check our vendor onboarding guide for the latest compliance requirements."
               }
             ].map((faq, index) => (
               <motion.div
@@ -1108,18 +1321,21 @@ const testimonials = [
     name: "Rahul Sharma",
     location: "Mumbai",
     comment: "Best rental service I've ever used. The cars are always in perfect condition and the staff is super helpful.",
-    avatar: "/images/avatar1.jpg"
+    bg: "bg-amber-100",
+    text: "text-amber-600"
   },
   {
     name: "Priya Patel",
     location: "Bangalore",
     comment: "Incredibly smooth booking process and great rates. Will definitely use again!",
-    avatar: "/images/avatar2.jpg"
+    bg: "bg-blue-100",
+    text: "text-blue-600"
   },
   {
     name: "Amit Kumar",
     location: "Delhi",
     comment: "The variety of vehicles and the quality of service is unmatched. Highly recommended!",
-    avatar: "/images/avatar3.jpg"
+    bg: "bg-green-100",
+    text: "text-green-600"
   }
 ];

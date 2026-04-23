@@ -46,11 +46,10 @@ export default function Navbar() {
           <Link href="/" className="relative z-50">
             <Image
               src={Logo}
-              alt="Vrhaman"
+              alt="Vrhaman - Best Self-Drive Bike & Car Rentals"
               width={120}
               height={40}
               className="h-10 w-auto"
-
             />
           </Link>
 
@@ -59,17 +58,12 @@ export default function Navbar() {
             {navItems.map((item, index) => (
               <div key={index} className="relative group">
                 <Link
-                  href={item.href || "#"}
+                  href={item.href || "/"}
                   className={`flex items-center gap-1 font-medium ${isScrolled ? "text-gray-800" : "text-black"
                     } hover:text-amber-500 transition-colors`}
-
                 >
                   {item.title}
-
-
                 </Link>
-
-
               </div>
 
             ))}
@@ -86,7 +80,6 @@ export default function Navbar() {
                   : "bg-white text-amber-500 hover:bg-gray-100"
                 }`}
             >
-
               Download App
             </motion.a>
 
@@ -96,9 +89,9 @@ export default function Navbar() {
               className="md:hidden relative z-50"
             >
               {isMobileMenuOpen ? (
-                <X className={isScrolled ? "text-gray-800" : "text-white"} />
+                <X className={isScrolled ? "text-gray-800" : "text-gray-100"} />
               ) : (
-                <Menu className={isScrolled ? "text-gray-800" : "text-white"} />
+                <Menu className={isScrolled ? "text-gray-800" : "text-gray-100"} />
               )}
             </button>
           </div>
@@ -122,7 +115,7 @@ export default function Navbar() {
                       transition={{ delay: index * 0.1 }}
                     >
                       <Link
-                        href="#"
+                        href={item.href || "/"}
                         className="text-2xl font-medium text-white hover:text-amber-500 transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

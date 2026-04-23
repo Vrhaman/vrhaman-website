@@ -33,42 +33,51 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vrhaman.com'),
   title: {
-    default: "Vrhaman | Premium Bike & Car Rentals",
+    default: "Vrhaman | Self-Drive Bike & Car Rentals | Fleet Management for Vendors",
     template: "%s | Vrhaman"
   },
-  description: "Vrhaman offers premium bike and car rentals with 24/7 support, comprehensive insurance, and doorstep delivery. Book your ride today!",
-  keywords: ["bike rental", "car rental", "vehicle rental", "premium rental", "vrhaman"],
+  description: "Rent premium self-drive bikes and cars with Vrhaman. Vendors can list vehicles, manage bookings, and grow revenue. Doorstep delivery available in 50+ cities.",
+  keywords: [
+    "self-drive bike rental", 
+    "self-drive car rental", 
+    "bike rental near me", 
+    "car rental near me", 
+    "rent bikes and cars online", 
+    "bike rental app",
+    "car rental app",
+    "vendor vehicle management",
+    "vehicle rental platform",
+    "fleet management software",
+    "earn from car rental"
+  ],
   authors: [{ name: "Vrhaman Mobitech Pvt Ltd" }],
   creator: "Vrhaman Mobitech Pvt Ltd",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.vrhaman.com",
-    title: "Vrhaman | Premium Bike & Car Rentals",
-    description: "Experience luxury and comfort with Vrhaman's extensive fleet of verified vehicles. Affordable, convenient, and premium rentals at your doorstep.",
+    title: "Vrhaman | Premium Rental & Management Platform",
+    description: "The ultimate destination for self-drive rentals and fleet management. Experience freedom or grow your business today.",
     siteName: "Vrhaman",
     images: [
       {
-        url: "/og-image.jpg", // Assuming an OG image exists or will be added, otherwise it falls back to none or default
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Vrhaman Vehicle Rentals",
+        alt: "Vrhaman - Rent or List Vehicles",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vrhaman | Premium Bike & Car Rentals",
-    description: "Rent premium bikes and cars with ease. 24/7 support and doorstep delivery available.",
+    description: "Rent premium bikes and cars or manage your fleet with ease.",
     images: ["/og-image.jpg"],
   },
   icons: {
     icon: "/app_icon.png",
     apple: "/app_icon.png",
-  },
-  verification: {
-    google: "google-site-verification-code", // Placeholder
-  },
+  }
 };
 
 const jsonLd = {
@@ -95,6 +104,22 @@ const jsonLd = {
       ]
     },
     {
+      "@type": "LocalBusiness",
+      "name": "Vrhaman - Self Drive Bike & Car Rental",
+      "image": "https://www.vrhaman.com/vrhaman-logo.png",
+      "@id": "https://www.vrhaman.com",
+      "url": "https://www.vrhaman.com",
+      "telephone": "+91 8968779413",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gurgaon",
+        "addressLocality": "Gurgaon",
+        "addressRegion": "Haryana",
+        "postalCode": "122001",
+        "addressCountry": "IN"
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": "https://www.vrhaman.com/#website",
       "url": "https://www.vrhaman.com",
@@ -112,7 +137,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${dmSans.variable} ${jakarta.variable} ${urbanist.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning className={`${poppins.variable} ${dmSans.variable} ${jakarta.variable} ${urbanist.variable} antialiased`}>
       <body className="font-primary">
         <script
           type="application/ld+json"

@@ -28,10 +28,9 @@ export default function Footer() {
               <Image
                 src={Logo}
                 alt="VRahman"
-                width={150}
-                height={50}
-                className="mb-6"
-
+                width={60}
+                height={60}
+                className="mb-6 rounded-xl"
               />
               <p className="text-gray-400 max-w-md">
                 Experience luxury and comfort with our premium vehicle rental service.
