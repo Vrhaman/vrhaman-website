@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "../../public/vrhaman-logo.png";
 import { Menu, X, Phone, } from "lucide-react";
 
 
@@ -42,16 +40,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="relative z-50">
-            <Image
-              src={Logo}
-              alt="Vrhaman - Best Self-Drive Bike & Car Rentals"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-            />
-          </Link>
+          {/* Left Spacer to maintain balance and keep center empty */}
+          <div className="flex-1" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -70,7 +60,7 @@ export default function Navbar() {
           </div>
 
           {/* Contact Button & Mobile Menu Trigger */}
-          <div className="flex items-center gap-4">
+          <div className="flex-1 flex items-center justify-end gap-4">
             <motion.a
               href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
               whileHover={{ scale: 1.05 }}
