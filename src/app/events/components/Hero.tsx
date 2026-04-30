@@ -19,7 +19,6 @@ export default function Hero() {
       {/* Sparkles Background */}
       <div className="absolute inset-0 w-full h-full z-[1]">
         <SparklesCore
-          id="tsparticleshero"
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
