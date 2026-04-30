@@ -15,6 +15,7 @@ export default {
       animation: {
         blob: "blob 7s infinite",
         float: "float 6s infinite",
+        sparkle: "sparkle 2s ease-in-out infinite",
       },
       keyframes: {
         blob: {
@@ -41,6 +42,10 @@ export default {
           "100%": {
             transform: "translateY(0px)",
           },
+        },
+        sparkle: {
+          "0%, 100%": { opacity: "0.2", transform: "scale(0.8)" },
+          "50%": { opacity: "1", transform: "scale(1.2)" },
         },
       },
       fontFamily: {
