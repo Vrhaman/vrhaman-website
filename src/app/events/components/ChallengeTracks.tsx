@@ -6,33 +6,40 @@ import { Video, Code2, Users, Trophy, Rocket, Instagram, Smartphone, Sparkles, T
 const tracks = [
   {
     id: "content",
-    title: "Vrhaman Viral Content Challenge",
-    subtitle: "TRACK 1 — CONTENT CREATOR CHALLENGE",
-    description: "Create the best Instagram reel/post/story/meme/content promoting Vrhaman. Showcase your creativity and help us build the future of mobility branding.",
+    title: "THE AI CREATOR BATTLE",
+    subtitle: "CHALLENGE 01 — CREATE. ENGAGE. VIRAL.",
+    tagline: "Create content that makes people want to ride.",
+    description: "Create engagements AI-powered visual storytelling content that emotionally connects with students and captures the excitement of student life, adventure, and travel culture.",
     icon: <Video className="w-8 h-8 text-[#FF9A00]" />,
-    formats: ["Reels", "Memes", "Edits", "Cinematic Videos", "Campus Content", "Storytelling Posts"],
-    criteria: ["Creativity", "Engagement", "Originality", "Storytelling", "Brand Alignment"],
+    formats: ["AI-generated reels", "Cinematic edits", "AI-generated videos", "AI posters", "Storytelling edits", "Short-form creative videos"],
+    criteria: ["Creativity", "Engagement", "Storytelling", "AI Integration", "Brand Alignment"],
     rewards: {
-      winner: ["Free 1-day ride", "Featured on Vrhaman Instagram", "Certificate", "Ambassador fast-track"],
-      top10: ["50% OFF rides", "Social media feature"],
-      all: ["10% OFF coupon"]
+      winner: ["FREE Ride from Vrhaman", "Vrhaman T-Shirt", "Winner Certificate", "Internship Opportunity"],
+      top2: ["30% OFF Ride Coupon", "Vrhaman Goodies"],
+      top3: ["20% OFF Ride Coupon", "Vrhaman Goodies"],
+      all: ["10% OFF Ride Coupon"]
     },
+    mission: "Participants must create AI-enhanced creative content for Vrhaman that captures the excitement of student life, freedom, adventure, and travel culture.",
+    theme: "COLLEGE ESCAPE WEEKEND (Friends planning sudden trips, late-night rides, post-exam freedom)",
     color: "from-orange-500/20 to-orange-600/5"
   },
   {
     id: "hackathon",
-    title: "Vrhaman AI Innovation Hackathon",
-    subtitle: "TRACK 2 — AI & INNOVATION HACKATHON",
-    description: "Solve real-world mobility and startup problems using AI, automation, design thinking, and coding. Build the next generation of transport tech.",
+    title: "BUILD THE FUTURE OF MOBILITY",
+    subtitle: "CHALLENGE 02 — INNOVATE. SOLVE. SCALE.",
+    tagline: "Solve startup problems with smart ideas.",
+    description: "Build a smart student discount system for Vrhaman. Create a scalable system that improves student engagement and encourages repeat bookings.",
     icon: <Code2 className="w-8 h-8 text-[#FF9A00]" />,
-    teamSize: "2–4 members",
-    formats: ["AI tools", "No-code tools", "Full-stack apps", "Prototypes", "Figma ideas"],
-    criteria: ["Innovation", "Usability", "Execution", "Real-world impact", "Presentation"],
+    teamSize: "Individual or Team",
+    formats: ["GitHub Repository", "Project Explanation", "Optional Demo Video"],
+    criteria: ["Innovation", "Scalability", "Usability", "Real-world Impact", "Execution"],
     rewards: {
-      winner: ["Free ride", "Internship opportunity", "Certificate", "Social media spotlight"],
-      runnerUp: ["50% OFF rides"],
-      all: ["Participation certificate", "10% OFF ride coupon"]
+      winner: ["FREE Ride from Vrhaman", "Vrhaman T-Shirt", "Winner Certificate", "Internship Opportunity"],
+      top2: ["30% OFF Ride Coupon", "Vrhaman Goodies"],
+      top3: ["20% OFF Ride Coupon", "Vrhaman Goodies"],
+      all: ["10% OFF Ride Coupon"]
     },
+    problemStatement: "STUDENT DISCOUNT ENGINE: Build a smart student discount system based on referrals, booking frequency, verification, and loyalty.",
     color: "from-blue-500/10 to-blue-600/5"
   }
 ];
@@ -69,17 +76,30 @@ export default function ChallengeTracks({ onParticipate }: { onParticipate: (tra
                 <span className="text-xs font-bold text-[#FF9A00] tracking-widest uppercase mb-2 block">
                   {track.subtitle}
                 </span>
-                <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                <h3 className="text-3xl font-bold text-white mb-2 leading-tight">
                   {track.title}
                 </h3>
-                <p className="text-gray-400 mb-8 leading-relaxed">
+                <p className="text-[#FF9A00] font-bold text-sm mb-4 tracking-wide uppercase">{track.tagline}</p>
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   {track.description}
                 </p>
+
+                {track.id === 'content' ? (
+                  <div className="mb-8 p-4 bg-white/5 rounded-xl border border-white/5">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Mission & Theme</p>
+                    <p className="text-sm text-gray-300 leading-relaxed italic">"{track.theme}"</p>
+                  </div>
+                ) : (
+                  <div className="mb-8 p-4 bg-white/5 rounded-xl border border-white/5">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Problem Statement</p>
+                    <p className="text-sm text-gray-300 leading-relaxed font-semibold">{track.problemStatement}</p>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div>
                     <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Target className="w-4 h-4 text-[#FF9A00]" /> Format
+                      <Target className="w-4 h-4 text-[#FF9A00]" /> Submission
                     </h4>
                     <ul className="space-y-2">
                       {track.formats.map(f => (
@@ -105,25 +125,26 @@ export default function ChallengeTracks({ onParticipate }: { onParticipate: (tra
 
                 <div className="bg-white/5 p-6 rounded-2xl border border-white/5 mb-8">
                   <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                    <Trophy className="w-5 h-5 text-[#FF9A00]" /> Top Rewards
+                    <Trophy className="w-5 h-5 text-[#FF9A00]" /> Winner Rewards
                   </h4>
                   <ul className="space-y-3">
-                    {track.rewards.winner.slice(0, 2).map((r, i) => (
+                    {track.rewards.winner.map((r, i) => (
                       <li key={i} className="text-gray-300 text-sm flex items-center gap-3">
                         <Sparkles className="w-4 h-4 text-[#FF9A00]" /> {r}
                       </li>
                     ))}
-                    <li className="text-[#FF9A00] text-sm font-semibold">+ more rewards for participants</li>
                   </ul>
                 </div>
 
-                <button
-                  onClick={() => onParticipate(track.id)}
+                <a
+                  href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-4 bg-white/10 hover:bg-[#FF9A00] text-white hover:text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 group/btn"
                 >
                   Participate Now
                   <Rocket className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

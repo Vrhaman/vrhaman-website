@@ -1,22 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Hero from "./components/Hero";
 import ChallengeTracks from "./components/ChallengeTracks";
 import WhyJoin from "./components/WhyJoin";
-import Ambassador from "./components/Ambassador";
-import RegistrationModal from "./components/RegistrationModal";
+import SubmissionFlow from "./components/SubmissionFlow";
 import { MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function EventsPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedTrack, setSelectedTrack] = useState<string | null>(null);
-
-  const handleParticipate = (track: string) => {
-    setSelectedTrack(track);
-    setIsModalOpen(true);
-  };
+  const whatsappLink = "https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA";
 
   return (
     <main className="min-h-screen bg-black text-white font-primary">
@@ -24,13 +16,13 @@ export default function EventsPage() {
       <Hero />
 
       {/* Challenge Tracks */}
-      <ChallengeTracks onParticipate={handleParticipate} />
+      <ChallengeTracks onParticipate={() => {}} />
 
-      {/* Why Join Section */}
+      {/* Why Join / WhatsApp Community Section */}
       <WhyJoin />
 
-      {/* Ambassador Section */}
-      <Ambassador />
+      {/* Submission Flow & GitHub & Final CTA */}
+      <SubmissionFlow />
 
       {/* Floating WhatsApp Button */}
       <motion.a
@@ -38,7 +30,7 @@ export default function EventsPage() {
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        href="https://wa.me/your-whatsapp-link"
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-[90] w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] group"
@@ -51,20 +43,15 @@ export default function EventsPage() {
 
       {/* Sticky Join Button for Mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent z-[80]">
-        <button 
-          onClick={() => handleParticipate('content')}
-          className="w-full py-4 bg-[#FF9A00] text-black font-bold rounded-xl shadow-2xl"
+        <a 
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-4 bg-[#FF9A00] text-black font-bold rounded-xl shadow-2xl flex items-center justify-center"
         >
           Participate Now
-        </button>
+        </a>
       </div>
-
-      {/* Registration Modal */}
-      <RegistrationModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        initialTrack={selectedTrack} 
-      />
     </main>
   );
 }

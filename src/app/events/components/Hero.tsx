@@ -35,14 +35,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-[#FF9A00] uppercase bg-[#FF9A00]/10 border border-[#FF9A00]/20 rounded-full">
-            Limited Time Opportunity
+            Create. Build. Go Viral. Win Real Rewards.
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight uppercase">
             VRHAMAN CAMPUS <br />
             <span className="text-[#FF9A00]">INNOVATION</span> CHALLENGE
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
-            Participate in exciting college competitions, solve real-world startup problems, create viral content, build AI solutions, and win rides, rewards, certificates, and internship opportunities.
+            Join the ultimate student innovation challenge by Vrhaman. Create AI-powered content, solve startup problems, compete with students, and win exciting rewards, ride benefits, and recognition.
           </p>
         </motion.div>
 
@@ -52,19 +52,19 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button 
-            className="w-full sm:w-auto px-8 py-4 text-lg font-bold text-black bg-[#FF9A00] rounded-xl hover:bg-[#FF9A00]/90 transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,154,0,0.3)]"
-            onClick={() => {
-              document.getElementById('challenges')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Join Event
-          </button>
-          <a
-            href="https://wa.me/your-whatsapp-link"
+          <a 
+            href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 text-lg font-bold text-white border-2 border-white/20 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-black bg-[#FF9A00] rounded-xl hover:bg-[#FF9A00]/90 transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,154,0,0.4)] flex items-center justify-center gap-2"
+          >
+            Join Event
+          </a>
+          <a
+            href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white border-2 border-white/20 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
           >
             Join WhatsApp Community
           </a>
