@@ -44,10 +44,25 @@ export default function Ambassador() {
               ))}
             </div>
 
-            <button className="px-8 py-4 bg-[#FF9A00] text-black font-bold rounded-xl hover:bg-[#FF9A00]/90 transition-all flex items-center gap-2 group">
-              Apply as Ambassador
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="https://forms.gle/your-google-form-link" // Placeholder for Google Form
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-5 bg-[#FF9A00] text-black font-black rounded-xl hover:bg-[#FF9A00]/90 transition-all flex items-center justify-center gap-2 group uppercase tracking-widest text-sm shadow-[0_0_20px_rgba(255,154,0,0.2)]"
+              >
+                Apply via Google Form
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-5 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 group uppercase tracking-widest text-sm"
+              >
+                Ambassador WhatsApp
+              </a>
+            </div>
           </motion.div>
 
           <motion.div 

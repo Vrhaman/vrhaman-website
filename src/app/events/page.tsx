@@ -3,6 +3,7 @@
 import Hero from "./components/Hero";
 import CollegeCard from "./components/CollegeCard";
 import WhyJoin from "./components/WhyJoin";
+import Ambassador from "./components/Ambassador";
 import { MOCK_EVENTS } from "@/lib/events";
 import { Trophy, Users, Star, School } from "lucide-react";
 import { motion } from "framer-motion";
@@ -98,6 +99,9 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      {/* Ambassador Section */}
+      <Ambassador />
 
       {/* WhatsApp Community Section */}
       <WhyJoin />

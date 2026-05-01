@@ -5,6 +5,7 @@ import { getEventBySlug } from "@/lib/events";
 import Hero from "../components/Hero";
 import ChallengeTracks from "../components/ChallengeTracks";
 import WhyJoin from "../components/WhyJoin";
+import Ambassador from "../components/Ambassador";
 import SubmissionFlow from "../components/SubmissionFlow";
 import { useEffect, useState } from "react";
 import { CollegeEvent } from "@/lib/types";
@@ -39,6 +40,7 @@ export default function CollegeEventPage() {
       </section>
 
       <WhyJoin />
+      <Ambassador />
       <SubmissionFlow event={event} />
     </main>
   );
