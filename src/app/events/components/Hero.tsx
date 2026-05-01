@@ -2,15 +2,22 @@
 
 import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { CollegeEvent } from "@/lib/types";
 
-export default function Hero() {
+export default function Hero({ event }: { event?: CollegeEvent }) {
+  const title = event?.title || "VRHAMAN CAMPUS INNOVATION CHALLENGE";
+  const college = event?.collegeName || "India's Coolest Student Community";
+  const desc = event?.description || "Join the ultimate student innovation challenge by Vrhaman. Create AI-powered content, solve startup problems, compete with students, and win exciting rewards.";
+  const whatsapp = event?.whatsappLink || "https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA";
+  const banner = event?.banner || "/events-hero.png";
+
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-black py-20 px-4">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/events-hero.png" 
-          alt="Innovation Challenge" 
+          src={banner} 
+          alt={college} 
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
@@ -35,14 +42,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-[#FF9A00] uppercase bg-[#FF9A00]/10 border border-[#FF9A00]/20 rounded-full">
-            Create. Build. Go Viral. Win Real Rewards.
+            {college}
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight uppercase">
-            VRHAMAN CAMPUS <br />
-            <span className="text-[#FF9A00]">INNOVATION</span> CHALLENGE
+            {title.split(' ').slice(0, -1).join(' ')} <br />
+            <span className="text-[#FF9A00]">{title.split(' ').slice(-1)}</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
-            Join the ultimate student innovation challenge by Vrhaman. Create AI-powered content, solve startup problems, compete with students, and win exciting rewards, ride benefits, and recognition.
+            {desc}
           </p>
         </motion.div>
 
@@ -53,15 +60,15 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
+            href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-black bg-[#FF9A00] rounded-xl hover:bg-[#FF9A00]/90 transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,154,0,0.4)] flex items-center justify-center gap-2"
           >
-            Join Event
+            Participate Now
           </a>
           <a
-            href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
+            href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white border-2 border-white/20 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
@@ -77,12 +84,12 @@ export default function Hero() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50"
         >
           <div className="flex flex-col items-center">
-            <span className="text-3xl font-bold text-white">50+</span>
-            <span className="text-sm text-gray-500 uppercase tracking-widest">Colleges</span>
+            <span className="text-3xl font-bold text-white">{event?.participantsCount || "500"}+</span>
+            <span className="text-sm text-gray-500 uppercase tracking-widest">Participants</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl font-bold text-white">1000+</span>
-            <span className="text-sm text-gray-500 uppercase tracking-widest">Students</span>
+            <span className="text-3xl font-bold text-white">{event?.submissionsCount || "100"}+</span>
+            <span className="text-sm text-gray-500 uppercase tracking-widest">Submissions</span>
           </div>
           <div className="flex flex-col items-center">
             <span className="text-3xl font-bold text-white">5+</span>
@@ -101,3 +108,4 @@ export default function Hero() {
     </section>
   );
 }
+

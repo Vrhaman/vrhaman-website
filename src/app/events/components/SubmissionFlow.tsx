@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { User, Mail, Phone, School, Github, ExternalLink, Send, Rocket } from "lucide-react";
+import { CollegeEvent } from "@/lib/types";
 
-export default function SubmissionFlow() {
-  const whatsappLink = "https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA";
+export default function SubmissionFlow({ event }: { event?: CollegeEvent }) {
+  const whatsappLink = event?.whatsappLink || "https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA";
+  const college = event?.collegeName || "Your College";
 
   return (
     <div className="bg-black py-24">
@@ -17,8 +19,8 @@ export default function SubmissionFlow() {
             viewport={{ once: true }}
             className="p-8 md:p-12 bg-white/5 border border-white/10 rounded-[2.5rem]"
           >
-            <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Register to Participate</h2>
-            <p className="text-gray-400 mb-8 leading-relaxed">Fill in your details to start your journey with the Vrhaman Innovation Challenge.</p>
+            <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Register for {college}</h2>
+            <p className="text-gray-400 mb-8 leading-relaxed">Fill in your details to join the challenge and get official updates on WhatsApp.</p>
 
             <form className="space-y-6">
               <div className="space-y-2">
@@ -32,7 +34,7 @@ export default function SubmissionFlow() {
                 <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
                   <School className="w-4 h-4" /> College Name
                 </label>
-                <input required type="text" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#FF9A00] transition-colors" placeholder="Your College/University" />
+                <input required type="text" defaultValue={event?.collegeName} className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#FF9A00] transition-colors" placeholder="Your College/University" />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -50,13 +52,21 @@ export default function SubmissionFlow() {
                 </div>
               </div>
 
+              {/* Ambassador Tracking */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
+                  <Rocket className="w-4 h-4" /> Ambassador Code (Optional)
+                </label>
+                <input type="text" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#FF9A00] transition-colors uppercase" placeholder="e.g. ADARSHCU" />
+              </div>
+
               <a 
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-5 bg-[#FF9A00] text-black font-bold rounded-xl hover:bg-[#FF9A00]/90 transition-all flex items-center justify-center gap-2 mt-8 text-lg shadow-[0_0_20px_rgba(255,154,0,0.2)]"
               >
-                Join Event & Register
+                Join {college} Community
                 <Send className="w-5 h-5" />
               </a>
             </form>
@@ -72,7 +82,7 @@ export default function SubmissionFlow() {
             <div className="p-8 md:p-12 bg-gradient-to-br from-[#FF9A00]/10 to-transparent border border-[#FF9A00]/20 rounded-[2.5rem]">
               <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tight">Project Submission</h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Participants can submit their GitHub project repositories and demo links after completing their challenge submissions.
+                Submit your projects and win big for {college}. Links will be shared in the WhatsApp group.
               </p>
 
               <div className="space-y-4">
@@ -84,7 +94,6 @@ export default function SubmissionFlow() {
                   <ExternalLink className="w-5 h-5" />
                   Submit Project Demo
                 </button>
-                <p className="text-xs text-gray-500 text-center italic">Links will be active during the submission window.</p>
               </div>
             </div>
 
@@ -93,8 +102,8 @@ export default function SubmissionFlow() {
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
                 <Rocket className="w-24 h-24" />
               </div>
-              <h2 className="text-4xl font-black mb-4 tracking-tighter uppercase leading-none">Ready to Build, <br />Create & Win?</h2>
-              <p className="text-gray-600 mb-8 font-medium">Join 500+ students already participating in India's coolest mobility challenge.</p>
+              <h2 className="text-4xl font-black mb-4 tracking-tighter uppercase leading-none">Compete & <br/>Build the Future</h2>
+              <p className="text-gray-600 mb-8 font-medium">Join {college} students already building the next generation of mobility.</p>
               
               <div className="flex flex-col gap-3">
                 <a 
@@ -105,14 +114,6 @@ export default function SubmissionFlow() {
                 >
                   Join the Challenge
                 </a>
-                <a 
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 bg-black text-white font-black rounded-xl hover:bg-[#FF9A00] hover:text-black transition-all flex items-center justify-center gap-2 uppercase tracking-widest"
-                >
-                  Join WhatsApp Community
-                </a>
               </div>
             </div>
           </motion.div>
@@ -121,3 +122,4 @@ export default function SubmissionFlow() {
     </div>
   );
 }
+

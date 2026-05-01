@@ -2,17 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Video, Code2, Users, Trophy, Rocket, Instagram, Smartphone, Sparkles, Target, Award } from "lucide-react";
+import { EventChallenge } from "@/lib/types";
 
-const tracks = [
+const DEFAULT_CHALLENGES: EventChallenge[] = [
   {
     id: "content",
     title: "THE AI CREATOR BATTLE",
-    subtitle: "CHALLENGE 01 — CREATE. ENGAGE. VIRAL.",
     tagline: "Create content that makes people want to ride.",
     description: "Create engagements AI-powered visual storytelling content that emotionally connects with students and captures the excitement of student life, adventure, and travel culture.",
-    icon: <Video className="w-8 h-8 text-[#FF9A00]" />,
-    formats: ["AI-generated reels", "Cinematic edits", "AI-generated videos", "AI posters", "Storytelling edits", "Short-form creative videos"],
-    criteria: ["Creativity", "Engagement", "Storytelling", "AI Integration", "Brand Alignment"],
     rewards: {
       winner: ["FREE Ride from Vrhaman", "Vrhaman T-Shirt", "Winner Certificate", "Internship Opportunity"],
       top2: ["30% OFF Ride Coupon", "Vrhaman Goodies"],
@@ -21,18 +18,12 @@ const tracks = [
     },
     mission: "Participants must create AI-enhanced creative content for Vrhaman that captures the excitement of student life, freedom, adventure, and travel culture.",
     theme: "COLLEGE ESCAPE WEEKEND (Friends planning sudden trips, late-night rides, post-exam freedom)",
-    color: "from-orange-500/20 to-orange-600/5"
   },
   {
     id: "hackathon",
     title: "BUILD THE FUTURE OF MOBILITY",
-    subtitle: "CHALLENGE 02 — INNOVATE. SOLVE. SCALE.",
     tagline: "Solve startup problems with smart ideas.",
     description: "Build a smart student discount system for Vrhaman. Create a scalable system that improves student engagement and encourages repeat bookings.",
-    icon: <Code2 className="w-8 h-8 text-[#FF9A00]" />,
-    teamSize: "Individual or Team",
-    formats: ["GitHub Repository", "Project Explanation", "Optional Demo Video"],
-    criteria: ["Innovation", "Scalability", "Usability", "Real-world Impact", "Execution"],
     rewards: {
       winner: ["FREE Ride from Vrhaman", "Vrhaman T-Shirt", "Winner Certificate", "Internship Opportunity"],
       top2: ["30% OFF Ride Coupon", "Vrhaman Goodies"],
@@ -40,17 +31,18 @@ const tracks = [
       all: ["10% OFF Ride Coupon"]
     },
     problemStatement: "STUDENT DISCOUNT ENGINE: Build a smart student discount system based on referrals, booking frequency, verification, and loyalty.",
-    color: "from-blue-500/10 to-blue-600/5"
   }
 ];
 
-export default function ChallengeTracks({ onParticipate }: { onParticipate: (track: string) => void }) {
+export default function ChallengeTracks({ challenges }: { challenges?: EventChallenge[] }) {
+  const tracks = challenges || DEFAULT_CHALLENGES;
+
   return (
     <section id="challenges" className="py-24 bg-black relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Choose Your Track</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tighter">Choose Your <span className="text-[#FF9A00]">Track</span></h2>
+          <p className="text-gray-400 max-w-2xl mx-auto italic">
             Whether you're a storyteller or a builder, there's a place for you to shine and win big.
           </p>
         </div>
@@ -63,73 +55,43 @@ export default function ChallengeTracks({ onParticipate }: { onParticipate: (tra
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`relative p-8 rounded-3xl bg-gradient-to-br ${track.color} border border-white/10 overflow-hidden group`}
+              className={`relative p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br ${idx === 0 ? 'from-orange-500/10 to-transparent' : 'from-blue-500/10 to-transparent'} border border-white/10 overflow-hidden group hover:border-[#FF9A00]/50 transition-all`}
             >
               {/* Background Glow */}
               <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-[#FF9A00]/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative z-10">
                 <div className="mb-6 p-4 bg-white/5 w-fit rounded-2xl border border-white/10 group-hover:scale-110 transition-transform">
-                  {track.icon}
+                  {idx === 0 ? <Video className="w-8 h-8 text-[#FF9A00]" /> : <Code2 className="w-8 h-8 text-[#FF9A00]" />}
                 </div>
                 
-                <span className="text-xs font-bold text-[#FF9A00] tracking-widest uppercase mb-2 block">
-                  {track.subtitle}
-                </span>
-                <h3 className="text-3xl font-bold text-white mb-2 leading-tight">
+                <h3 className="text-3xl font-bold text-white mb-2 leading-tight uppercase tracking-tight">
                   {track.title}
                 </h3>
                 <p className="text-[#FF9A00] font-bold text-sm mb-4 tracking-wide uppercase">{track.tagline}</p>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-gray-400 mb-6 leading-relaxed text-sm">
                   {track.description}
                 </p>
 
-                {track.id === 'content' ? (
+                {track.id === 'content' || idx === 0 ? (
                   <div className="mb-8 p-4 bg-white/5 rounded-xl border border-white/5">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Mission & Theme</p>
-                    <p className="text-sm text-gray-300 leading-relaxed italic">"{track.theme}"</p>
+                    <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-black">Mission & Theme</p>
+                    <p className="text-sm text-gray-300 leading-relaxed italic">"{track.theme || track.mission}"</p>
                   </div>
                 ) : (
                   <div className="mb-8 p-4 bg-white/5 rounded-xl border border-white/5">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Problem Statement</p>
+                    <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-black">Problem Statement</p>
                     <p className="text-sm text-gray-300 leading-relaxed font-semibold">{track.problemStatement}</p>
                   </div>
                 )}
 
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Target className="w-4 h-4 text-[#FF9A00]" /> Submission
-                    </h4>
-                    <ul className="space-y-2">
-                      {track.formats.map(f => (
-                        <li key={f} className="text-gray-500 text-sm flex items-center gap-2">
-                          <div className="w-1 h-1 bg-[#FF9A00] rounded-full" /> {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Award className="w-4 h-4 text-[#FF9A00]" /> Criteria
-                    </h4>
-                    <ul className="space-y-2">
-                      {track.criteria.map(c => (
-                        <li key={c} className="text-gray-500 text-sm flex items-center gap-2">
-                          <div className="w-1 h-1 bg-[#FF9A00] rounded-full" /> {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
                 <div className="bg-white/5 p-6 rounded-2xl border border-white/5 mb-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                    <Trophy className="w-5 h-5 text-[#FF9A00]" /> Winner Rewards
+                  <h4 className="text-white font-bold mb-4 flex items-center gap-2 uppercase text-xs tracking-widest">
+                    <Trophy className="w-4 h-4 text-[#FF9A00]" /> Winner Rewards
                   </h4>
                   <ul className="space-y-3">
                     {track.rewards.winner.map((r, i) => (
-                      <li key={i} className="text-gray-300 text-sm flex items-center gap-3">
+                      <li key={i} className="text-gray-300 text-sm flex items-center gap-3 font-medium">
                         <Sparkles className="w-4 h-4 text-[#FF9A00]" /> {r}
                       </li>
                     ))}
@@ -140,7 +102,7 @@ export default function ChallengeTracks({ onParticipate }: { onParticipate: (tra
                   href="https://chat.whatsapp.com/Jc2XRRO3ldy0TBu0dD3NdIA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 bg-white/10 hover:bg-[#FF9A00] text-white hover:text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 group/btn"
+                  className="w-full py-5 bg-white/5 hover:bg-[#FF9A00] text-white hover:text-black font-black rounded-2xl transition-all flex items-center justify-center gap-2 group/btn uppercase tracking-widest"
                 >
                   Participate Now
                   <Rocket className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
@@ -153,3 +115,4 @@ export default function ChallengeTracks({ onParticipate }: { onParticipate: (tra
     </section>
   );
 }
+
