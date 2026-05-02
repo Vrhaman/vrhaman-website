@@ -4,18 +4,17 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const perks = [
-  "Commission per booking",
-  "Free rides & discounts",
+  "Earn commission per booking",
+  "Free rides based on performance",
   "Leadership certificate",
   "Startup exposure",
-  "Networking access",
-  "Exclusive events",
-  "Internship opportunities"
+  "Social media feature",
+  "Exclusive Vrhaman events"
 ];
 
 export default function Ambassador() {
   return (
-    <section className="py-24 bg-black overflow-hidden relative">
+    <section className="py-24 bg-black overflow-hidden relative border-t border-white/5">
       {/* Decorative Orbs */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#FF9A00]/5 rounded-full blur-[100px] pointer-events-none" />
 
