@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        brand: "#f99825",
       },
       animation: {
         blob: "blob 7s infinite",
@@ -47,6 +48,10 @@ export default {
           "0%, 100%": { opacity: "0.2", transform: "scale(0.8)" },
           "50%": { opacity: "1", transform: "scale(1.2)" },
         },
+      },
+      backgroundImage: {
+        'mesh-gradient': "radial-gradient(at 0% 0%, hsla(30,95%,60%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(20,95%,50%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(40,95%,70%,1) 0, transparent 50%)",
+        'brand-gradient': "linear-gradient(135deg, #f89626 0%, #ffae42 100%)",
       },
       fontFamily: {
         primary: ['var(--font-urbanist)', 'system-ui', 'sans-serif'],

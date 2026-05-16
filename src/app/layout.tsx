@@ -33,45 +33,50 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vrhaman.com'),
   title: {
-    default: "Vrhaman | Self-Drive Bike & Car Rentals | Fleet Management for Vendors",
+    default: "Vrhaman | Self-Drive Bike & Car Rentals | Premium Rental Platform",
     template: "%s | Vrhaman"
   },
-  description: "Rent premium self-drive bikes and cars with Vrhaman. Vendors can list vehicles, manage bookings, and grow revenue. Doorstep delivery available in 50+ cities.",
+  description: "Rent premium self-drive bikes, cars, and EVs easily with Vrhaman. India's top platform for self-drive rentals with transparent pricing, instant booking, and nearby vehicle discovery. Perfect for students, tourists, and daily commuters.",
   keywords: [
     "self-drive bike rental", 
     "self-drive car rental", 
-    "bike rental near me", 
-    "car rental near me", 
-    "rent bikes and cars online", 
-    "bike rental app",
-    "car rental app",
-    "vendor vehicle management",
-    "vehicle rental platform",
-    "fleet management software",
-    "earn from car rental"
+    "bike rental app", 
+    "car rental app", 
+    "monthly car rental India",
+    "hourly bike rental",
+    "EV rental platform",
+    "vehicle rental for students",
+    "vehicle rental for tourists",
+    "rent bikes in Pune",
+    "rent cars in Gurgaon",
+    "Vrhaman rentals",
+    "nearby vehicle rental service"
   ],
+  alternates: {
+    canonical: '/',
+  },
   authors: [{ name: "Vrhaman Mobitech Pvt Ltd" }],
   creator: "Vrhaman Mobitech Pvt Ltd",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.vrhaman.com",
-    title: "Vrhaman | Premium Rental & Management Platform",
-    description: "The ultimate destination for self-drive rentals and fleet management. Experience freedom or grow your business today.",
+    title: "Vrhaman | Rent Bikes, Cars & EVs Easily | India's Best Rental Platform",
+    description: "Discover nearby vehicles, compare options, and book instantly. Experience freedom with our premium fleet or partner with us to grow your rental business.",
     siteName: "Vrhaman",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Vrhaman - Rent or List Vehicles",
+        alt: "Vrhaman - India's Premium Self-Drive Rental Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vrhaman | Premium Bike & Car Rentals",
-    description: "Rent premium bikes and cars or manage your fleet with ease.",
+    title: "Vrhaman | Rent Bikes, Cars & EVs Easily",
+    description: "The ultimate destination for self-drive rentals. Book in a few taps and enjoy transparent pricing.",
     images: ["/og-image.jpg"],
   },
   icons: {
