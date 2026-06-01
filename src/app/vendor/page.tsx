@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Car, ChartBar, Shield, Wallet2, Users, BadgeCheck, Clock, Settings, CheckCircle2, Smartphone, FileCheck, Star } from 'lucide-react';
+import { ArrowRight, Car, BarChart3, Shield, Wallet2, Users, BadgeCheck, Clock, Settings, CheckCircle2, Smartphone, FileCheck, Star } from 'lucide-react';
 import HeroImage from "../../../public/Vendor Mockups/4.png";
 import { useState } from 'react';
 import GuideImage1 from "../../../public/Vendor Mockups/2.png";
@@ -19,7 +19,7 @@ export default function VendorPage() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-amber-50/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 via-white to-[#FF9A00]/10" />
           <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5" />
         </div>
 
@@ -31,14 +31,14 @@ export default function VendorPage() {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-8"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
-                <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF9A00]/15 text-[#FF9A00] rounded-full text-sm font-medium">
+                <span className="w-2 h-2 bg-[#FF9A00] rounded-full animate-pulse" />
                 Vrhaman for Vendors
               </span>
               
-              <h1 className="font-heading text-6xl md:text-7xl font-bold leading-tight">
+              <h1 className="font-display text-6xl md:text-7xl font-extrabold leading-tight text-gray-950">
                 Grow Your Vehicle 
-                <span className="block text-amber-500">Rental Business</span>
+                <span className="block text-[#FF9A00]">Rental Business</span>
               </h1>
 
               <p className="text-xl text-gray-600 max-w-lg">
@@ -53,7 +53,7 @@ export default function VendorPage() {
                 >
                   <Link
                     href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman_vendor"
-                    className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition-all group"
+                    className="inline-flex items-center gap-2 bg-[#FF9A00] text-white px-8 py-4 rounded-full font-medium hover:bg-[#e88d00] transition-all group"
                   >
                     Download Vendor App
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -65,8 +65,8 @@ export default function VendorPage() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="/vendor/demo"
-                    className="inline-flex items-center gap-2 bg-white text-amber-600 px-8 py-4 rounded-full font-medium border-2 border-amber-500 hover:bg-amber-50 transition-all"
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-white text-[#FF9A00] px-8 py-4 rounded-full font-medium border-2 border-[#FF9A00] hover:bg-[#FF9A00]/10 transition-all"
                   >
                     Request Demo
                   </Link>
@@ -77,7 +77,7 @@ export default function VendorPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
                 {[
                   { value: "10K+", label: "Active Rentals", icon: <Car className="w-6 h-6" /> },
-                  { value: "95%", label: "Booking Rate", icon: <ChartBar className="w-6 h-6" /> },
+                  { value: "95%", label: "Booking Rate", icon: <BarChart3 className="w-6 h-6" /> },
                   { value: "₹50K+", label: "Avg. Monthly", icon: <Wallet2 className="w-6 h-6" /> },
                 ].map((stat, index) => (
                   <motion.div
@@ -88,14 +88,14 @@ export default function VendorPage() {
                     whileHover={{ y: -5 }}
                     className="relative overflow-hidden bg-white rounded-2xl shadow-xl p-6 group"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-50 to-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#FF9A00]/10 to-[#FF9A00]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-amber-100 rounded-lg text-amber-600">
+                        <div className="p-2 bg-[#FF9A00]/15 rounded-lg text-[#FF9A00]">
                           {stat.icon}
                         </div>
                       </div>
-                      <div className="text-4xl font-extrabold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+                      <div className="text-4xl font-extrabold bg-gradient-to-r from-[#FF9A00] to-[#FF9A00] bg-clip-text text-transparent">
                         {stat.value}
                       </div>
                       <div className="text-base text-gray-600 font-medium mt-1">
@@ -111,9 +111,9 @@ export default function VendorPage() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              className="relative hidden lg:block"
+              className="relative mt-10 lg:mt-0"
             >
-              <div className="relative w-full max-w-[400px] mx-auto">
+              <div className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[400px] mx-auto">
                 <Image
                   src={HeroImage}
                   alt="Vendor Dashboard"
@@ -121,20 +121,20 @@ export default function VendorPage() {
                   height={800}
                   quality={100}
                   priority
-                  className="w-full h-auto rounded-[2rem] shadow-2xl"
+                  className="w-full h-auto object-contain bg-transparent"
                 />
 
-                {/* Floating Cards */}
+                {/* Floating Cards - fully responsive and visible on all screens */}
                 <motion.div
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -left-12 top-1/4 bg-white p-4 rounded-xl shadow-lg"
+                  className="absolute -left-2 sm:-left-6 lg:-left-12 top-1/4 bg-white p-3 sm:p-4 rounded-xl shadow-lg z-20"
                 >
-                  <div className="flex items-center gap-3">
-                    <Shield className="text-amber-500" />
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <Shield className="text-[#FF9A00] w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
                     <div>
-                      <div className="font-medium">Secure Platform</div>
-                      <div className="text-sm text-gray-600">Protected Transactions</div>
+                      <div className="font-medium text-xs sm:text-sm text-gray-900">Secure Platform</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600">Protected Transactions</div>
                     </div>
                   </div>
                 </motion.div>
@@ -142,13 +142,13 @@ export default function VendorPage() {
                 <motion.div
                   animate={{ y: [10, -10, 10] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -right-12 bottom-1/4 bg-white p-4 rounded-xl shadow-lg"
+                  className="absolute -right-2 sm:-right-6 lg:-right-12 bottom-1/4 bg-white p-3 sm:p-4 rounded-xl shadow-lg z-20"
                 >
-                  <div className="flex items-center gap-3">
-                    <ChartBar className="text-amber-500" />
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <BarChart3 className="text-[#FF9A00] w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
                     <div>
-                      <div className="font-medium">Real-time Analytics</div>
-                      <div className="text-sm text-gray-600">Track Performance</div>
+                      <div className="font-medium text-xs sm:text-sm text-gray-900">Real-time Analytics</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600">Track Performance</div>
                     </div>
                   </div>
                 </motion.div>
@@ -173,9 +173,9 @@ export default function VendorPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF9A00]/15 text-[#FF9A00] rounded-full text-sm font-medium mb-6"
             >
-              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-[#FF9A00] rounded-full animate-pulse" />
               Platform Features
             </motion.div>
             
@@ -186,7 +186,7 @@ export default function VendorPage() {
               className="font-heading text-4xl md:text-5xl font-bold mb-6 text-black"
             >
               Everything You Need to
-              <span className="block bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#FF9A00] to-[#FF9A00] bg-clip-text text-transparent">
                 Succeed and Grow
               </span>
             </motion.h2>
@@ -200,12 +200,12 @@ export default function VendorPage() {
               whileInView={{ opacity: 1, y: 0 }}
               className="lg:col-span-8 group"
             >
-              <div className="relative h-full bg-gradient-to-br from-amber-500 to-yellow-500 p-10 rounded-[2.5rem] overflow-hidden">
+              <div className="relative h-full bg-gradient-to-br from-[#FF9A00] to-[#FF9A00] p-10 rounded-[2.5rem] overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
                 <div className="relative z-10 h-full flex flex-col">
                   <div className="mb-auto">
                     <div className="w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6">
-                      <ChartBar className="w-8 h-8 text-white" />
+                      <BarChart3 className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-4">Real-time Analytics</h3>
                     <p className="text-white/80 text-lg max-w-lg">
@@ -241,12 +241,12 @@ export default function VendorPage() {
                   transition={{ delay: 0.2 + index * 0.1 }}
                   className="group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-[#FF9A00]/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   <div className="relative z-10">
-                    <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-12 h-12 bg-[#FF9A00]/15 rounded-xl flex items-center justify-center text-[#FF9A00] mb-6 group-hover:scale-110 transition-transform duration-500">
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-amber-600 transition-colors text-black">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-[#FF9A00] transition-colors text-black">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600">{feature.description}</p>
@@ -280,12 +280,12 @@ export default function VendorPage() {
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="lg:col-span-4 group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-[#FF9A00]/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-12 h-12 bg-[#FF9A00]/15 rounded-xl flex items-center justify-center text-[#FF9A00] mb-6 group-hover:scale-110 transition-transform duration-500">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-amber-600 transition-colors text-black">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-[#FF9A00] transition-colors text-black">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600">{feature.description}</p>
@@ -298,11 +298,11 @@ export default function VendorPage() {
 
       {/* How to Register Section */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-transparent" />
         
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 bg-[#FF9A00]/15 text-[#FF9A00] rounded-full text-sm font-medium mb-6">
               Simple Registration Process
             </span>
             <h2 className="font-heading text-4xl font-bold mb-6 text-black">
@@ -341,10 +341,10 @@ export default function VendorPage() {
                 transition={{ delay: index * 0.2 }}
                 className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-amber-900 rounded-lg flex items-center justify-center text-white font-bold">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#FF9A00] rounded-lg flex items-center justify-center text-white font-bold">
                   {step.step}
                 </div>
-                <div className="w-16 h-16 bg-amber-600 rounded-xl flex items-center justify-center text-white mb-6">
+                <div className="w-16 h-16 bg-[#FF9A00] rounded-xl flex items-center justify-center text-white mb-6">
                   {step.icon}
                 </div>
 
@@ -385,28 +385,28 @@ export default function VendorPage() {
                   description: "Add high-quality photos and detailed descriptions of your vehicles",
                   icon: <Smartphone className="w-6 h-6" />,
                   image: GuideImage1,
-                  iconBg: "bg-amber-500"
+                  iconBg: "bg-[#FF9A00]"
                 },
                 {
                   title: "Set Competitive Prices",
                   description: "Use our pricing tools to set attractive rates for your market",
                   icon: <Wallet2 className="w-6 h-6" />,
                   image: GuideImage2,
-                  iconBg: "bg-amber-500"
+                  iconBg: "bg-[#FF9A00]"
                 },
                 {
                   title: "Quick Response Time",
                   description: "Enable instant booking and respond to inquiries promptly",
                   icon: <Clock className="w-6 h-6" />,
                   image: GuideImage3,
-                  iconBg: "bg-amber-500"
+                  iconBg: "bg-[#FF9A00]"
                 },
                 {
                   title: "Maintain High Standards",
                   description: "Keep your vehicles well-maintained and clean for great reviews",
                   icon: <Star className="w-6 h-6" />,
                   image: GuideImage4,
-                  iconBg: "bg-amber-500"
+                  iconBg: "bg-[#FF9A00]"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -417,12 +417,12 @@ export default function VendorPage() {
                   onClick={() => setActiveGuide(index)}
                   className={`flex items-start gap-4 p-6 rounded-2xl cursor-pointer transition-all duration-300 ${
                     activeGuide === index 
-                      ? 'bg-amber-500' 
+                      ? 'bg-[#FF9A00]' 
                       : 'bg-[#2A2D36] hover:bg-[#32363F]'
                   }`}
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-                    activeGuide === index ? 'bg-white text-amber-500' : item.iconBg + ' text-white'
+                    activeGuide === index ? 'bg-white text-[#FF9A00]' : item.iconBg + ' text-white'
                   }`}>
                     {item.icon}
                   </div>
@@ -472,7 +472,7 @@ export default function VendorPage() {
                 </div>
 
                 {/* Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-[3rem] blur-2xl -z-10" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#FF9A00]/20 to-[#FF9A00]/20 rounded-[3rem] blur-2xl -z-10" />
               </div>
             </div>
           </div>
@@ -482,7 +482,7 @@ export default function VendorPage() {
     
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-amber-500 to-yellow-500 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#FF9A00] to-[#FF9A00] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-4xl font-bold mb-6">
@@ -497,7 +497,7 @@ export default function VendorPage() {
             >
               <Link
                 href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman_vendor"
-                className="inline-flex items-center gap-2 bg-white text-amber-600 px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-all"
+                className="inline-flex items-center gap-2 bg-white text-[#FF9A00] px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-all"
               >
                 Download Vendor App
                 <ArrowRight className="w-5 h-5" />
@@ -509,3 +509,4 @@ export default function VendorPage() {
     </div>
   );
 }
+

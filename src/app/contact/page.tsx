@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { SparklesCore } from "../../components/ui/sparkles";
 import ContainerWrapper from "@/components/containerWrapper";
-import { Button } from "@nextui-org/react";
 import { useState, useRef } from 'react';
 
 // Contact info data
@@ -20,7 +19,7 @@ const contactInfo = [
   },
   {
     icon: (
-      <svg className="paw-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
     ),
@@ -36,7 +35,7 @@ const contactInfo = [
       </svg>
     ),
     title: "Location", 
-    value: "Gurgoan, India",
+    value: "Gurgaon, India",
     link: "#", // https://goo.gl/maps/QYsRGhYyG4T2Zcxt5
   }
 ];
@@ -145,8 +144,8 @@ const ContactPage = () => {
     <div className="min-h-screen bg-black pt-16 md:pt-0">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden">
-        <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-purple-900/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob" />
-        <div className="absolute top-0 -right-4 w-[500px] h-[500px] bg-blue-900/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob animation-delay-2000" />
+        <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-[#FF9A00]/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob" />
+        <div className="absolute top-0 -right-4 w-[500px] h-[500px] bg-[#FF9A00]/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob animation-delay-2000" />
         <div className="absolute -bottom-8 left-20 w-[500px] h-[500px] bg-indigo-900/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob animation-delay-4000" />
       </div>
 
@@ -178,7 +177,7 @@ const ContactPage = () => {
                   className="text-4xl lg:text-6xl font-bold text-white mb-6"
                 >
                   Partner With Vrhaman
-                  <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-[#FF9A00] to-[#FF9A00] bg-clip-text text-transparent">
                     Grow Your Vehicle Rental Business
                   </span>
                 </motion.h1>
@@ -201,7 +200,7 @@ const ContactPage = () => {
                   href="#vendor-registration"
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-6 py-3 font-medium text-white shadow-lg shadow-purple-500/20"
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#FF9A00] to-[#FF9A00] px-6 py-3 font-medium text-white shadow-lg shadow-[#FF9A00]/20"
                 >
                   Become a Vendor
                 </motion.a>
@@ -217,7 +216,7 @@ const ContactPage = () => {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
                     >
-                      <div className="p-3 rounded-lg bg-purple-500/10 text-purple-400">
+                      <div className="p-3 rounded-lg bg-[#FF9A00]/10 text-[#FF9A00]">
                         {info.icon}
                       </div>
                       <div>
@@ -235,7 +234,7 @@ const ContactPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FF9A00]/10 to-blue-500/10 rounded-2xl blur-2xl" />
                 <div id="vendor-registration" className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
                   <form 
                     ref={formRef}
@@ -261,7 +260,7 @@ const ContactPage = () => {
                           name="contact_first_name"
                           required
                           placeholder="First name"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                       <div className="space-y-2">
@@ -271,7 +270,7 @@ const ContactPage = () => {
                           name="contact_last_name"
                           required
                           placeholder="Last name"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                     </div>
@@ -285,7 +284,7 @@ const ContactPage = () => {
                           name="email"
                           required
                           placeholder="john@example.com"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                       <div className="space-y-2">
@@ -295,7 +294,7 @@ const ContactPage = () => {
                           name="phone"
                           required
                           placeholder="+91 90000 00000"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                     </div>
@@ -313,7 +312,7 @@ const ContactPage = () => {
                           name="business_name"
                           required
                           placeholder="Your rental business name"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                       <div className="space-y-2">
@@ -321,7 +320,7 @@ const ContactPage = () => {
                         <select
                           name="role"
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         >
                           <option value="" className="bg-gray-900">Select role</option>
                           {roleOptions.map((role) => (
@@ -341,7 +340,7 @@ const ContactPage = () => {
                           name="city"
                           required
                           placeholder="Your city"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                       <div className="space-y-2">
@@ -351,7 +350,7 @@ const ContactPage = () => {
                           name="primary_operating_area"
                           required
                           placeholder="City or area"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                     </div>
@@ -364,7 +363,7 @@ const ContactPage = () => {
                         name="address"
                         required
                         placeholder="Street, area, landmark"
-                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                       />
                     </div>
 
@@ -378,7 +377,7 @@ const ContactPage = () => {
                         <select
                           name="vehicle_segment"
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         >
                           <option value="" className="bg-gray-900">Select segment</option>
                           {vehicleSegments.map((segment) => (
@@ -396,7 +395,7 @@ const ContactPage = () => {
                           min={1}
                           required
                           placeholder="e.g. 5"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         />
                       </div>
                     </div>
@@ -413,7 +412,7 @@ const ContactPage = () => {
                                 name="vehicle_type[]"
                                 value={type}
                                 required={index === 0}
-                                className="h-4 w-4 rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500/40"
+                                className="h-4 w-4 rounded border-white/20 bg-white/10 text-[#FF9A00] focus:ring-[#FF9A00]/40"
                               />
                               {type}
                             </label>
@@ -425,7 +424,7 @@ const ContactPage = () => {
                         <select 
                           name="fleet_size" 
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         >
                           <option value="" className="bg-gray-900">Select fleet size</option>
                           {fleetSizes.map((size) => (
@@ -443,7 +442,7 @@ const ContactPage = () => {
                       <select 
                         name="preferred_contact_time" 
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                       >
                         <option value="" className="bg-gray-900">Select a time</option>
                         {preferredContactTimes.map((time) => (
@@ -464,7 +463,7 @@ const ContactPage = () => {
                         <select
                           name="service_type"
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         >
                           <option value="" className="bg-gray-900">Select service type</option>
                           {serviceTypes.map((type) => (
@@ -478,7 +477,7 @@ const ContactPage = () => {
                         <label className="text-sm font-medium text-gray-400">Expected Monthly Earnings Range (optional)</label>
                         <select
                           name="expected_monthly_earnings"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                         >
                           <option value="" className="bg-gray-900">Select range</option>
                           {earningsRanges.map((range) => (
@@ -498,7 +497,7 @@ const ContactPage = () => {
                         name="vehicle_details"
                         required
                         placeholder="List vehicle models, year, transmission type, and any special features."
-                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                       />
                     </div>
 
@@ -510,12 +509,12 @@ const ContactPage = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Button 
+                      <button 
                         type="submit"
-                        className="w-full px-8 py-6 bg-gradient-to-r from-purple-500 to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300"
+                        className="w-full px-8 py-6 bg-gradient-to-r from-[#FF9A00] to-red-500 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center"
                       >
                         Register as a Vendor
-                      </Button>
+                      </button>
                     </motion.div>
 
                     <p className="text-xs text-gray-400 text-center">
@@ -564,7 +563,7 @@ const ContactPage = () => {
           <ContainerWrapper>
             <div className="rounded-2xl overflow-hidden h-[400px] border border-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004959968!2d77.06889754035558!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi%2C%20India!5e0!3m2!1sen!2sin!4v1708761547948!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112176.63156961975!2d76.95348064999999!3d28.4594965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1708761547948!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -581,3 +580,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

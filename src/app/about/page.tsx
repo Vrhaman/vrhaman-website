@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Users, Shield, ArrowRight, Heart, Leaf } from 'lucide-react';
+import VehicleHero from "../../../public/vehicle-rental-hero.png";
 
 export default function AboutPage() {
   return (
@@ -10,7 +11,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-amber-50/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 via-white to-[#FF9A00]/10" />
           <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5" />
         </div>
 
@@ -19,7 +20,7 @@ export default function AboutPage() {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-6"
+              className="inline-block px-4 py-2 bg-[#FF9A00]/15 text-[#FF9A00] rounded-full text-sm font-medium mb-6"
             >
               About Vrhaman
             </motion.span>
@@ -28,10 +29,10 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold mb-6"
+              className="text-5xl md:text-6xl font-bold mb-6 text-gray-950"
             >
               Transforming the Way India
-              <span className="block bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#FF9A00] to-[#FF9A00] bg-clip-text text-transparent">
                 Rents Vehicles
               </span>
             </motion.h1>
@@ -58,13 +59,13 @@ export default function AboutPage() {
               className="relative"
             >
               <Image
-                src="/images/about-story.jpg"
+                src={VehicleHero}
                 alt="Our Story"
                 width={600}
                 height={700}
-                className="rounded-[2.5rem] shadow-2xl"
+                className="aspect-[6/7] rounded-[2.5rem] object-cover shadow-2xl"
               />
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-amber-500 rounded-full flex items-center justify-center text-white p-8 shadow-lg">
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-[#FF9A00] rounded-full flex items-center justify-center text-white p-8 shadow-lg">
                 <span className="text-center font-semibold">
                   Trusted by 50K+ Customers
                 </span>
@@ -76,10 +77,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-4xl font-bold mb-6">Our Story</h2>
+              <h2 className="text-4xl font-bold mb-6 text-gray-950">Our Story</h2>
               <p className="text-gray-600 text-lg">
                 Founded in 2024, Vrhaman started with a simple idea: make vehicle rentals as easy as booking a cab. 
-                What began as a small fleet of cars in Mumbai has now grown into India&#39;s leading vehicle rental platform.
+                What began as a small fleet of vehicles in Jalandhar has now grown into India&#39;s leading vehicle rental platform.
               </p>
               <p className="text-gray-600 text-lg">
                 Today, we connect thousands of vehicle owners with customers across the country, 
@@ -93,8 +94,8 @@ export default function AboutPage() {
                   { value: "10K+", label: "Vehicle Partners" },
                   { value: "4.8/5", label: "Customer Rating" },
                 ].map((stat, index) => (
-                  <div key={index} className="bg-amber-50 rounded-2xl p-6">
-                    <div className="text-3xl font-bold text-amber-600 mb-1">{stat.value}</div>
+                  <div key={index} className="bg-[#FF9A00]/10 rounded-2xl p-6">
+                    <div className="text-3xl font-bold text-[#FF9A00] mb-1">{stat.value}</div>
                     <div className="text-gray-600">{stat.label}</div>
                   </div>
                 ))}
@@ -130,7 +131,7 @@ export default function AboutPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-colors"
               >
-                <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#FF9A00] rounded-xl flex items-center justify-center mb-6">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
@@ -196,26 +197,8 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      {/* CTA Section */}
-      <section className="py-20 bg-amber-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">Join Our Journey</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Be part of India&#39;s fastest-growing vehicle rental community
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <a href="/careers" className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-4 rounded-full font-medium hover:bg-amber-600 transition-all">
-                View Open Positions
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }
+

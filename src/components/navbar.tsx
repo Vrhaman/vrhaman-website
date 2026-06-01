@@ -4,18 +4,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Phone, } from "lucide-react";
+import { Globe, Menu, X, Phone } from "lucide-react";
 import Logo from "../../public/vrhaman-logo.png";
 
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,16 +34,17 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100"
-          : "bg-transparent"
-        }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 border-b border-gray-100 shadow-sm backdrop-blur-md"
+          : "bg-transparent border-b border-transparent"
+      }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Section */}
-          <div className="flex-1 flex items-center">
-            <Link href="/" className="inline-block bg-white px-3 py-1.5 rounded-lg shadow-sm hover:scale-105 transition-transform">
+          {/* Left Side: Logo */}
+          <div className="flex items-center">
+            <Link href="/" className="inline-block hover:scale-105 transition-transform shrink-0">
               <Image 
                 src={Logo} 
                 alt="Vrhaman Logo" 
@@ -56,58 +56,58 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <div key={index} className="relative group">
-                <Link
-                  href={item.href || "/"}
-                  className={`flex items-center gap-1 font-bold ${isScrolled ? "text-gray-800" : "text-gray-900"
-                    } hover:text-brand transition-all`}
-                >
-                  {item.title}
-                </Link>
-              </div>
-            ))}
-          </div>
+          {/* Right Side: Navigation & CTA Button */}
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation (Aligned next to CTA on right) */}
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item, index) => (
+                <div key={index} className="relative group">
+                  <Link
+                    href={item.href || "/"}
+                    className="flex items-center gap-1 font-bold text-gray-900 hover:text-[#FF9A00] transition-all"
+                  >
+                    {item.title}
+                  </Link>
+                </div>
+              ))}
+            </div>
 
-          {/* Contact Button & Mobile Menu Trigger */}
-          <div className="flex-1 flex items-center justify-end gap-4">
-            <motion.a
-              href="https://play.google.com/store/apps/details?id=com.vrhaman.vrhaman"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full font-medium transition-all ${isScrolled
-                  ? "bg-brand text-white hover:bg-opacity-90"
-                  : "bg-white text-brand hover:bg-gray-100"
-                }`}
-            >
-              Download App
-            </motion.a>
+            <div className="flex items-center gap-4">
+              <motion.a
+                href="https://app.vrhaman.com/"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden min-h-11 items-center gap-2 rounded-full bg-[#FF9A00] px-6 py-2.5 font-bold text-white shadow-lg shadow-[#FF9A00]/25 transition-all hover:bg-[#FF9A00]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF9A00] md:flex"
+              >
+                <Globe className="h-4 w-4" />
+                Web version
+              </motion.a>
 
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden relative z-50 p-2"
-            >
-              {isMobileMenuOpen ? (
-                <X className="text-gray-900" />
-              ) : (
-                <Menu className="text-gray-900" />
-              )}
-            </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="relative z-50 rounded-xl p-2 text-gray-900 transition hover:bg-gray-100 md:hidden"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              >
+                {isMobileMenuOpen ? (
+                  <X />
+                ) : (
+                  <Menu />
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
-                initial={{ opacity: 0, x: "100%" }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: "100%" }}
-                transition={{ type: "tween" }}
-                className="fixed inset-0 bg-brand z-40 md:hidden"
+                initial={{ opacity: 0, y: -12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.18 }}
+                className="absolute left-4 right-4 top-full z-40 mt-3 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-2xl md:hidden"
               >
-                <div className="flex flex-col items-center justify-center h-full gap-8">
+                <div className="flex flex-col p-3">
                   {navItems.map((item, index) => (
                     <motion.div
                       key={index}
@@ -117,7 +117,7 @@ export default function Navbar() {
                     >
                       <Link
                         href={item.href || "/"}
-                        className="text-2xl font-medium text-white hover:opacity-80 transition-all"
+                        className="block rounded-xl px-4 py-3 text-base font-bold text-gray-900 transition hover:bg-[#FF9A00]/10 hover:text-[#FF9A00]"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.title}
@@ -129,7 +129,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navItems.length * 0.1 }}
-                    className="flex items-center gap-2 px-8 py-3 bg-white text-brand rounded-full font-medium hover:bg-gray-100 transition-colors"
+                    className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#FF9A00] px-4 py-3 font-bold text-white transition-colors hover:bg-[#FF9A00]/90"
                   >
                     <Phone className="w-4 h-4" />
                     Book Now

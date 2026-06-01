@@ -3,11 +3,11 @@ export default function TermsOfServicePage() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms &amp; Conditions</h1>
-        <p className="text-gray-600 mb-8">Effective Date: 08/04/2025</p>
+        <p className="text-gray-600 mb-8">Effective Date: 29/05/2026</p>
 
         <div className="prose max-w-none">
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold">Vendor Terms &amp; Conditions</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Vendor Terms &amp; Conditions</h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-600">
               <li>Vendors must accurately describe their vehicles, including make, model, year, and condition.</li>
               <li>Set transparent, competitive pricing.</li>
@@ -26,7 +26,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold">Customer Terms &amp; Conditions</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Customer Terms &amp; Conditions</h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-600">
               <li>Bookings must be made only through the platform.</li>
               <li>Prepayment required for confirmation.</li>
@@ -53,8 +53,8 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold">Cancellation &amp; Refund Policy</h2>
-            <p className="text-gray-600"><strong>Partial Payment (Non-Refundable):</strong> Forfeit 20% deposit, no refund.</p>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Cancellation &amp; Refund Policy</h2>
+            <p className="text-gray-600"><strong>Partial Payment(20% or 99rs Booking) (Non-Refundable):</strong> Forfeit 20% deposit/99rs, no refund.</p>
             <p className="text-gray-600"><strong>Full Payment:</strong></p>
             <ul className="list-disc pl-5 text-gray-600 space-y-2">
               <li>More than 48 hours before pickup: 85% refund (excluding platform fees)</li>
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold">Platform Conditions</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Platform Conditions</h2>
             <ul className="list-disc pl-5 text-gray-600 space-y-2">
               <li>Vrhaman enables vendors to manage rentals and bookings.</li>
               <li>Vrhaman is not liable for account misuse.</li>
@@ -79,7 +79,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold">Indemnification &amp; Liability</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Indemnification &amp; Liability</h2>
             <ul className="list-disc pl-5 text-gray-600 space-y-2">
               <li>Vendors will indemnify Vrhaman for losses from fraud/negligence.</li>
               <li>Vrhaman is not liable for vendor/customer damages.</li>
