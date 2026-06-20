@@ -132,8 +132,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-gray-950 min-[360px]:text-[2.7rem] sm:text-5xl lg:text-6xl">
-              Rent Bikes,Cars & EVs <br />
-              <span className="text-[#FF9A00]">Easily with Vrhaman</span>
+              Rent Bikes,Cars & EVs <br /><span className="text-[#FF9A00]">Easily with Vrhaman</span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-base font-medium leading-7 text-gray-600 sm:text-lg sm:leading-8">
