@@ -42,28 +42,35 @@ export default function Footer() {
         <div className="container mx-auto px-4 pt-20 pb-12 border-b border-white/10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
             <h4 className="text-xl font-bold text-white">Available in {cities.length}+ Cities</h4>
-            <button
+            <motion.button
               onClick={() => setIsLocationsOpen(!isLocationsOpen)}
-              className="flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-brand hover:border-brand transition-all bg-white/5"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:text-[#FF9A00] hover:border-[#FF9A00] transition-all bg-white/5 cursor-pointer"
             >
               {isLocationsOpen ? (
                 <>Show Less <ChevronUp className="w-4 h-4" /></>
               ) : (
                 <>Explore All Cities <ChevronDown className="w-4 h-4" /></>
               )}
-            </button>
+            </motion.button>
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-3">
             {(isLocationsOpen ? cities : cities.slice(0, 12)).map((city, i) => (
-              <Link 
-                key={i} 
-                href="https://app.vrhaman.com/" 
-                className="text-gray-500 hover:text-brand text-sm transition-colors flex items-center gap-2"
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-700" />
-                Bike & Car Rental in {city}
-              </Link>
+                <Link 
+                  href="https://app.vrhaman.com/" 
+                  className="group text-gray-500 hover:text-brand text-sm transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-700 group-hover:bg-brand transition-colors" />
+                  Bike & Car Rental in {city}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -130,10 +137,15 @@ export default function Footer() {
                   { name: 'Safety Standards', href: '/#faq' },
                 ].map((link, i) => (
                   <li key={i}>
-                    <Link href={link.href} className="text-gray-400 hover:text-brand transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 bg-brand rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.name}
-                    </Link>
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Link href={link.href} className="text-gray-400 hover:text-brand transition-colors flex items-center gap-2 group cursor-pointer">
+                        <span className="w-1.5 h-1.5 bg-brand rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {link.name}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
@@ -149,10 +161,15 @@ export default function Footer() {
                   { name: 'Vendor Dashboard', href: 'https://vendor.vrhaman.com/' },
                 ].map((link, i) => (
                   <li key={i}>
-                    <Link href={link.href} className="text-gray-400 hover:text-brand transition-colors flex items-center gap-2 group">
-                      <span className="w-1 h-1 bg-brand rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.name}
-                    </Link>
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Link href={link.href} className="text-gray-400 hover:text-brand transition-colors flex items-center gap-2 group cursor-pointer">
+                        <span className="w-1.5 h-1.5 bg-brand rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {link.name}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
@@ -166,14 +183,28 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-brand shrink-0 mt-1" />
                   <div>
                     <p className="text-sm font-bold text-white">Call Us</p>
-                    <a href="tel:+918968779413" className="hover:text-brand">+91 8968779413</a>
+                    <motion.a 
+                      href="tel:+918968779413" 
+                      className="hover:text-brand transition-colors inline-block cursor-pointer font-medium"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      +91 8968779413
+                    </motion.a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400">
                   <Mail className="w-5 h-5 text-brand shrink-0 mt-1" />
                   <div>
                     <p className="text-sm font-bold text-white">Email Us</p>
-                    <a href="mailto:vrhaman.com@gmail.com" className="hover:text-brand">vrhaman.com@gmail.com</a>
+                    <motion.a 
+                      href="mailto:vrhaman.com@gmail.com" 
+                      className="hover:text-brand transition-colors inline-block cursor-pointer font-medium"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      vrhaman.com@gmail.com
+                    </motion.a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400">

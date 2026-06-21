@@ -47,14 +47,6 @@ const vehicleTypes = [
   "Both",
 ];
 
-const fleetSizes = [
-  "1-3 vehicles",
-  "4-10 vehicles",
-  "11-25 vehicles",
-  "26-50 vehicles",
-  "50+ vehicles",
-];
-
 const preferredContactTimes = [
   "Morning (9am-12pm)",
   "Afternoon (12pm-4pm)",
@@ -66,25 +58,6 @@ const roleOptions = [
   "Owner",
   "Fleet Manager",
   "Individual Vendor",
-];
-
-const vehicleSegments = [
-  "Bike",
-  "Car",
-  "EV",
-];
-
-const serviceTypes = [
-  "Self-Drive Rentals",
-  "Chauffeur Rentals",
-  "Both",
-];
-
-const earningsRanges = [
-  "Less than 25,000",
-  "25,000 - 50,000",
-  "50,000 - 1,00,000",
-  "1,00,000+",
 ];
 
 const ContactPage = () => {
@@ -141,7 +114,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black pt-16 md:pt-0">
+    <div className="min-h-screen bg-black pt-20">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-[#FF9A00]/20 rounded-full mix-blend-multiply filter blur-[132px] animate-blob" />
@@ -213,15 +186,24 @@ const ContactPage = () => {
                       href={info.link}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-6 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+                      className="group flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-[#FF9A00]/30 hover:shadow-lg hover:shadow-[#FF9A00]/5 transition-all duration-300 cursor-pointer"
                     >
-                      <div className="p-3 rounded-lg bg-[#FF9A00]/10 text-[#FF9A00]">
-                        {info.icon}
+                      <div className="flex items-center gap-6">
+                        <div className="p-3 rounded-xl bg-[#FF9A00]/10 text-[#FF9A00] group-hover:bg-[#FF9A00] group-hover:text-white transition-all duration-300">
+                          {info.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover:text-[#FF9A00] transition-colors">{info.title}</h3>
+                          <p className="text-white font-medium text-lg mt-0.5 group-hover:text-white transition-colors">{info.value}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-sm font-medium text-gray-400">{info.title}</h3>
-                        <p className="text-white">{info.value}</p>
+                      <div className="text-gray-500 group-hover:text-[#FF9A00] group-hover:translate-x-1 transition-all duration-300">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </motion.a>
                   ))}
@@ -252,27 +234,15 @@ const ContactPage = () => {
                     </div>
 
                     {/* Contact Person */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Contact First Name</label>
-                        <input
-                          type="text"
-                          name="contact_first_name"
-                          required
-                          placeholder="First name"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Contact Last Name</label>
-                        <input
-                          type="text"
-                          name="contact_last_name"
-                          required
-                          placeholder="Last name"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        />
-                      </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-400">Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Your name"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
+                      />
                     </div>
 
                     {/* Email and Phone */}
@@ -332,107 +302,50 @@ const ContactPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">City</label>
-                        <input
-                          type="text"
-                          name="city"
-                          required
-                          placeholder="Your city"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Primary Operating City / Area</label>
-                        <input
-                          type="text"
-                          name="primary_operating_area"
-                          required
-                          placeholder="City or area"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Address */}
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-400">Business Address</label>
-                      <textarea
-                        rows={3}
-                        name="address"
+                      <label className="text-sm font-medium text-gray-400">City</label>
+                      <input
+                        type="text"
+                        name="city"
                         required
-                        placeholder="Street, area, landmark"
+                        placeholder="Your city"
                         className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
                       />
                     </div>
+
 
                     <div>
                       <p className="text-sm text-gray-400">Vehicle Information</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Vehicle Segment</label>
-                        <select
-                          name="vehicle_segment"
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        >
-                          <option value="" className="bg-gray-900">Select segment</option>
-                          {vehicleSegments.map((segment) => (
-                            <option key={segment} value={segment} className="bg-gray-900">
-                              {segment}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Number of Vehicles</label>
-                        <input
-                          type="number"
-                          name="number_of_vehicles"
-                          min={1}
-                          required
-                          placeholder="e.g. 5"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        />
-                      </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-400">Number of Vehicles</label>
+                      <input
+                        type="number"
+                        name="number_of_vehicles"
+                        min={1}
+                        required
+                        placeholder="e.g. 5"
+                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
+                      />
                     </div>
 
-                    {/* Vehicle Type and Fleet Size */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Vehicle Type</label>
-                        <div className="space-y-2 rounded-lg border border-white/10 bg-white/5 p-4">
-                          {vehicleTypes.map((type, index) => (
-                            <label key={type} className="flex items-center gap-3 text-sm text-gray-300">
-                              <input
-                                type="checkbox"
-                                name="vehicle_type[]"
-                                value={type}
-                                required={index === 0}
-                                className="h-4 w-4 rounded border-white/20 bg-white/10 text-[#FF9A00] focus:ring-[#FF9A00]/40"
-                              />
-                              {type}
-                            </label>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Fleet Size</label>
-                        <select 
-                          name="fleet_size" 
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        >
-                          <option value="" className="bg-gray-900">Select fleet size</option>
-                          {fleetSizes.map((size) => (
-                            <option key={size} value={size} className="bg-gray-900">
-                              {size}
-                            </option>
-                          ))}
-                        </select>
+                    {/* Vehicle Type */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-gray-400">Vehicle Type</label>
+                      <div className="space-y-2 rounded-lg border border-white/10 bg-white/5 p-4">
+                        {vehicleTypes.map((type, index) => (
+                          <label key={type} className="flex items-center gap-3 text-sm text-gray-300">
+                            <input
+                              type="checkbox"
+                              name="vehicle_type[]"
+                              value={type}
+                              required={index === 0}
+                              className="h-4 w-4 rounded border-white/20 bg-white/10 text-[#FF9A00] focus:ring-[#FF9A00]/40"
+                            />
+                            {type}
+                          </label>
+                        ))}
                       </div>
                     </div>
 
@@ -453,53 +366,7 @@ const ContactPage = () => {
                       </select>
                     </div>
 
-                    <div>
-                      <p className="text-sm text-gray-400">Partnership Preferences</p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Interested Service Type</label>
-                        <select
-                          name="service_type"
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        >
-                          <option value="" className="bg-gray-900">Select service type</option>
-                          {serviceTypes.map((type) => (
-                            <option key={type} value={type} className="bg-gray-900">
-                              {type}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400">Expected Monthly Earnings Range (optional)</label>
-                        <select
-                          name="expected_monthly_earnings"
-                          className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                        >
-                          <option value="" className="bg-gray-900">Select range</option>
-                          {earningsRanges.map((range) => (
-                            <option key={range} value={range} className="bg-gray-900">
-                              {range}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Vehicle Details */}
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-400">Vehicle Details</label>
-                      <textarea
-                        rows={6}
-                        name="vehicle_details"
-                        required
-                        placeholder="List vehicle models, year, transmission type, and any special features."
-                        className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF9A00]/20"
-                      />
-                    </div>
 
                     {/* Honeypot */}
                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
@@ -558,22 +425,7 @@ const ContactPage = () => {
           </ContainerWrapper>
         </section>
 
-        {/* Map Section */}
-        <section className="relative py-20">
-          <ContainerWrapper>
-            <div className="rounded-2xl overflow-hidden h-[400px] border border-white/10">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112176.63156961975!2d76.95348064999999!3d28.4594965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1708761547948!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </ContainerWrapper>
-        </section>
+
       </div>
     </div>
   );

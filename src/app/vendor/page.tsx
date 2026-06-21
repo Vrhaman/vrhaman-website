@@ -17,7 +17,7 @@ export default function VendorPage() {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative pt-20 pb-16 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 via-white to-[#FF9A00]/10" />
           <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-5" />
@@ -194,34 +194,75 @@ export default function VendorPage() {
 
           {/* Features Grid */}
           <div className="grid lg:grid-cols-12 gap-6">
-            {/* Large Feature Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="lg:col-span-8 group"
-            >
-              <div className="relative h-full bg-gradient-to-br from-[#FF9A00] to-[#FF9A00] p-10 rounded-[2.5rem] overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
-                <div className="relative z-10 h-full flex flex-col">
-                  <div className="mb-auto">
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6">
-                      <BarChart3 className="w-8 h-8 text-white" />
+            
+            {/* Left Column (spans 8) */}
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              
+              {/* Large Feature Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                className="group flex-1 flex flex-col"
+              >
+                <div className="relative h-full bg-gradient-to-br from-[#FF9A00] to-[#FF9A00] p-10 rounded-[2.5rem] overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+                  <div className="relative z-10 flex flex-col">
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6">
+                        <BarChart3 className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-white mb-4">Real-time Analytics</h3>
+                      <p className="text-white/80 text-lg max-w-lg">
+                        Track performance, revenue, and booking trends with detailed insights. Make data-driven decisions to grow your business.
+                      </p>
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-4">Real-time Analytics</h3>
-                    <p className="text-white/80 text-lg max-w-lg">
-                      Track performance, revenue, and booking trends with detailed insights. Make data-driven decisions to grow your business.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 mt-8">
-                    <span className="px-4 py-2 bg-white/10 rounded-full text-white text-sm">Revenue Tracking</span>
-                    <span className="px-4 py-2 bg-white/10 rounded-full text-white text-sm">Booking Analytics</span>
+                    <div className="flex items-center gap-4 mt-4">
+                      <span className="px-4 py-2 bg-white/10 rounded-full text-white text-sm">Revenue Tracking</span>
+                      <span className="px-4 py-2 bg-white/10 rounded-full text-white text-sm">Booking Analytics</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Regular Feature Cards */}
-            <div className="lg:col-span-4 grid gap-6">
+              {/* Sub-grid for Fleet and Customer Management */}
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[
+                  {
+                    icon: <Settings className="w-6 h-6" />,
+                    title: "Fleet Management",
+                    description: "Easily manage your vehicle listings and availability"
+                  },
+                  {
+                    icon: <Users className="w-6 h-6" />,
+                    title: "Customer Management",
+                    description: "Handle customer communications efficiently"
+                  }
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500 lg:h-[230px]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-[#FF9A00]/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-[#FF9A00]/15 rounded-xl flex items-center justify-center text-[#FF9A00] mb-6 group-hover:scale-110 transition-transform duration-500">
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 group-hover:text-[#FF9A00] transition-colors text-black">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Right Column (spans 4) */}
+            <div className="lg:col-span-4 flex flex-col gap-6">
               {[
                 {
                   icon: <Shield className="w-6 h-6" />,
@@ -232,6 +273,11 @@ export default function VendorPage() {
                   icon: <Clock className="w-6 h-6" />,
                   title: "Instant Bookings",
                   description: "Automated booking system with real-time updates"
+                },
+                {
+                  icon: <BadgeCheck className="w-6 h-6" />,
+                  title: "Verified Renters",
+                  description: "Pre-verified customers for safer rentals"
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -239,7 +285,7 @@ export default function VendorPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500"
+                  className="group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500 lg:h-[230px]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-[#FF9A00]/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   <div className="relative z-10">
@@ -255,43 +301,6 @@ export default function VendorPage() {
               ))}
             </div>
 
-            {/* Bottom Row Feature Cards */}
-            {[
-              {
-                icon: <Settings className="w-6 h-6" />,
-                title: "Fleet Management",
-                description: "Easily manage your vehicle listings and availability"
-              },
-              {
-                icon: <Users className="w-6 h-6" />,
-                title: "Customer Management",
-                description: "Handle customer communications efficiently"
-              },
-              {
-                icon: <BadgeCheck className="w-6 h-6" />,
-                title: "Verified Renters",
-                description: "Pre-verified customers for safer rentals"
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="lg:col-span-4 group relative bg-white rounded-[2rem] p-8 hover:shadow-[0_20px_50px_rgba(249,115,22,0.15)] transition-all duration-500"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF9A00]/10 to-[#FF9A00]/10 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-[#FF9A00]/15 rounded-xl flex items-center justify-center text-[#FF9A00] mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-[#FF9A00] transition-colors text-black">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

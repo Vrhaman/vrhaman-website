@@ -114,12 +114,12 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#FDFBF7] font-primary text-gray-900">
-      <section className="relative overflow-hidden bg-[#FDFBF7] pt-28 sm:pt-36 lg:pt-40">
+      <section className="relative overflow-hidden bg-[#FDFBF7] pt-24 sm:pt-24 lg:pt-24">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-12 w-96 h-96 bg-[#FF9A00]/5 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-12 w-96 h-96 bg-[#FF9A00]/5 rounded-full blur-[120px]" />
         </div>
-        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-14 sm:px-6 lg:min-h-[760px] lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.7fr)] lg:items-center lg:px-8 lg:pb-24">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-2 sm:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.7fr)] lg:items-start lg:px-8 lg:pb-4">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="how-it-works" className="relative overflow-hidden bg-[#FDFBF7] py-16 sm:py-20 lg:py-28">
+      <section id="how-it-works" className="relative overflow-hidden bg-[#FDFBF7] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-28">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-0 top-0 h-full w-full bg-[linear-gradient(90deg,rgba(249,152,37,0.08),transparent_30%,rgba(17,24,39,0.04)_100%)]" />
           <Image
@@ -334,12 +334,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative min-h-[420px] p-6 sm:min-h-[520px]">
+            <div className="relative min-h-[550px] p-6 sm:min-h-[680px] flex items-center justify-center">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.32),transparent_34%)]" />
-              <div className="relative mx-auto grid h-full max-w-xl grid-cols-3 items-end gap-3 sm:gap-5">
-                <ScreenCard image={ScreenSearch} label="Best bike and car rental mobile app for instant bookings in India" className="h-[300px] p-2 sm:h-[390px]" />
-                <ScreenCard image={ScreenBooking} label="Best bike and car rental mobile app for instant bookings in India" className="h-[360px] p-2 sm:h-[470px]" />
-                <ScreenCard image={ScreenConfirm} label="Best bike and car rental mobile app for instant bookings in India" className="h-[300px] p-2 sm:h-[390px]" />
+              <div className="relative w-full max-w-[720px] grid grid-cols-3 items-end gap-3 sm:gap-5">
+                <ScreenCard image={ScreenSearch} label="Best bike and car rental mobile app for instant bookings in India" className="h-[390px] p-2 sm:h-[507px]" />
+                <ScreenCard image={ScreenBooking} label="Best bike and car rental mobile app for instant bookings in India" className="h-[468px] p-2 sm:h-[611px]" />
+                <ScreenCard image={ScreenConfirm} label="Best bike and car rental mobile app for instant bookings in India" className="h-[390px] p-2 sm:h-[507px]" />
               </div>
             </div>
           </div>
