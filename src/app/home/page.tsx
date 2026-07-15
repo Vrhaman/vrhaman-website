@@ -28,6 +28,7 @@ import ScreenBrowse from "../../../public/Customer Mockups/2.png";
 import ScreenSearch from "../../../public/Customer Mockups/4.png";
 import ScreenBooking from "../../../public/Customer Mockups/6.png";
 import ScreenConfirm from "../../../public/Customer Mockups/8.png";
+import ScreenHome from "../../../public/Customer Mockups/1.png";
 import VehicleHero from "../../../public/vehicle-rental-hero.png";
 
 type ScreenCardProps = {
@@ -338,8 +339,8 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.32),transparent_34%)]" />
               <div className="relative w-full max-w-[720px] grid grid-cols-3 items-end gap-3 sm:gap-5">
                 <ScreenCard image={ScreenSearch} label="Best bike and car rental mobile app for instant bookings in India" className="h-[390px] p-2 sm:h-[507px]" />
-                <ScreenCard image={ScreenBooking} label="Best bike and car rental mobile app for instant bookings in India" className="h-[468px] p-2 sm:h-[611px]" />
-                <ScreenCard image={ScreenConfirm} label="Best bike and car rental mobile app for instant bookings in India" className="h-[390px] p-2 sm:h-[507px]" />
+                <ScreenCard image={ScreenBrowse} label="Best bike and car rental mobile app for instant bookings in India" className="h-[468px] p-2 sm:h-[611px]" />
+                <ScreenCard image={ScreenHome} label="Best bike and car rental mobile app for instant bookings in India" className="h-[390px] p-2 sm:h-[507px]" />
               </div>
             </div>
           </div>
